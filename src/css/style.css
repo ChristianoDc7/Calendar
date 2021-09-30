@@ -1,0 +1,105 @@
+li{
+    list-style: none
+}
+.navbar{
+    color: white;
+    justify-content: space-between !important;
+    align-items: center !important;
+    max-height: 45px;
+    text-align: right;
+}
+.btnav{
+    color: white
+}
+.dropdown-item:active{
+    background-color: #198754
+}
+
+.nav-link{
+    color: white
+}
+.nav-link:hover{
+    color: white
+}
+.btx{
+    transform: translateY(9.5%)
+}
+.ovf{
+    overflow-y: scroll;
+    max-height: 200px;
+    color: white !important;
+    min-width: 300px
+  }
+.media-body{
+    font-size: 14px
+}
+::-webkit-scrollbar-thumb {
+    
+    border-radius: 8px;
+    background: #198754;
+    box-shadow: inset 0 0 5px rgb(255, 255, 255);
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 8px;
+  }
+
+  @keyframes backchange{
+    0%{
+        background-image: url(../img/paysage-rural-maisons-madagascar.jpg);
+        
+    }
+    25%{
+        background-image: url(../img/DSCN3987.JPG);
+    }
+    50%{
+        background-image: url(../img/riz.jpeg);
+    }
+    75%{
+        background-image: url(../img/fruits33_letchis_-_credit_irt_-_serge_gelabert_dts_12_2018-1920x960.jpg);
+    }
+    100%{
+        background-image: url(../img/paysage-rural-maisons-madagascar.jpg);
+        
+    }
+}
+body{
+    animation: backchange 25s infinite forwards;
+    
+    background-attachment: fixed;
+    background-repeat: no-repeat
+}
+label{
+    color: white;
+}
+.notification h6{
+    color: white
+}
+.colonne1{
+    background-color: rgb(29, 29, 29) !important;
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .colonne2{
+    background-color: var(--bs-primary) !important;
+    color: white
+  }
+  .colonne3{
+    background-color: #fd7e14 !important
+  }
+table{
+    background-color: white
+}
+.blue{
+    background-color: var(--bs-primary) !important;
+}
+.red{
+    background-color: var(--bs-red) !important;
+}
