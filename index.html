@@ -11,6 +11,7 @@
     <script src="src/js/bootstrap.min.js" defer></script>
     <script src="src/js/popper.min.js" defer></script>
     <script src="src/js/script.js" defer></script>
+    <link rel="manifest" href="/manifest.webmanifest">
     <title>Agri calendar</title>
 </head>
 <body>
@@ -38,7 +39,25 @@
      <h1>
        calendar hello!
      </h1>
+     <select name="region" id="region">
+       <option value="alaotra">alaotra</option>
+       <option value=""></option>
+     </select>
    </div>
    <div id="geer"></div>
 </body>
+<script>
+  // Register our service worker
+if ('serviceWorker' in navigator) { // check browser compatability
+    navigator.serviceWorker.register('/sw.js') // register your service worker file
+        .then((reg) => { // success
+            console.log('Service worker registered! Scope : ' + reg.scope);
+        })
+        .catch((err) => { // failure
+            console.log('Registration failed! ' + err);
+        });
+} else {
+    console.log('The browser does not support Service Worker');
+}
+</script>
 </html>
