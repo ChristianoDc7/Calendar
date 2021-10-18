@@ -102,9 +102,12 @@ table{
 }
 .red{
     background-color: var(--bs-red) !important;
+<<<<<<< HEAD
 }
 @media screen and (max-width: 600px){
   nav h6{
       display: none
   }
+=======
+>>>>>>> ec1f28f3b6b64039dbd8af5990743acbd01b4659
 }

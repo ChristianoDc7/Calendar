@@ -7,10 +7,18 @@
     <script src="src/js/jquery.min.js"></script>
     <link rel="stylesheet" href="src/css/bootstrap.min.css">
     <link rel="stylesheet" href="src/css/style.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="src/css/fontawesome-free-5.15.4-web/css/all.css">
     <script src="src/js/bootstrap.min.js" ></script>
     <script src="src/js/popper.min.js" ></script>
+=======
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="src/js/jquery.min.js" defer></script>
+    <script src="src/js/bootstrap.min.js" defer></script>
+    <script src="src/js/popper.min.js" defer></script>
+>>>>>>> ec1f28f3b6b64039dbd8af5990743acbd01b4659
     <script src="src/js/script.js" defer></script>
+    <link rel="manifest" href="/manifest.webmanifest">
     <title>Agri calendar</title>
 </head>
 <body>
@@ -34,43 +42,29 @@
        </ul>
      
     </nav>
-   <div class="container m-5">
-       <div class="row pt-5">
-            <div class="row">
-            <div class="form-group col">
-              <label for="sel2">Misafidiana Fambolena: </label>
-              <select name="culture" id="sel2" class="form-control"  >
-                <option value="mais"> mais </option>
-                <option value="Riz"> Riz </option>
-              </select>
-
-            </div>
-            <div class="col btx">
-              <button class="btn btn-success" onclick="getvalues(document.getElementById('sel2').value)"><i class="fas fa-search"></i> Search</button>
-            </div>
-            <div class="notification col">
-              <h6>Notifications</h6>
-              <div class="container ovf mt-3">
-                  <div class="media  p-3">
-                      <img src="src/img/vanille.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
-                      <div class="media-body">
-                        <h6>Vanille <small><i>La saison de vente est ouverte</i></small></h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
-                      </div>
-                    </div>
-                  <div class="media  p-3">
-                    <img src="src/img/fruits33_letchis.jpg" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
-                    <div class="media-body">
-                      <h6>Letchis <small><i>Saison en approche</i></small></h6>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
-                    </div>
-                  </div>
-                  
-                  </div>
-
-                </div>
-       </div>
+   <div class="container mt-5">
+     <h1>
+       calendar hello!
+     </h1>
+     <select name="region" id="region">
+       <option value="alaotra">alaotra</option>
+       <option value=""></option>
+     </select>
    </div>
    <div id="geer"></div>
 </body>
+<script>
+  // Register our service worker
+if ('serviceWorker' in navigator) { // check browser compatability
+    navigator.serviceWorker.register('./sw.js') // register your service worker file
+        .then((reg) => { // success
+            console.log('Service worker registered! Scope : ' + reg.scope);
+        })
+        .catch((err) => { // failure
+            console.log('Registration failed! ' + err);
+        });
+} else {
+    console.log('The browser does not support Service Worker');
+}
+</script>
 </html>
