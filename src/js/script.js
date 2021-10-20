@@ -183,7 +183,7 @@ function tablu(deb,fin){
 }
 function getvalues(fambolena,faritra){
     if(faritra=="none" && fambolena=="none"){
-        document.getElementById('geer').innerHTML = "<h1>Misafidiana sokajy azafady!!</h1>"
+        document.getElementById('geer').innerHTML = "<h1 style='color:white'>Misafidiana sokajy azafady!!</h1>"
     }else if(faritra=="none" && fambolena!="none"){
         fetch('src/database/data.json')
         .then((response) =>response.json())
@@ -510,5 +510,8 @@ let recl = `<tr>
 
         return tabs + prepa + semis  +repi+ fert + sarc + butt + recl    
     }).join('')
-    document.getElementById('geer').innerHTML = html
+    if(html==""){
+        document.getElementById('geer').innerHTML="<h1 style='color:white'>Aucun résultat</h1>"
+    }else{
+    document.getElementById('geer').innerHTML = html}
 }
