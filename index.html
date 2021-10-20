@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="src/css/bootstrap.min.css">
     <link rel="stylesheet" href="src/css/style.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="src/css/fontawesome-free-5.15.4-web/css/all.css"/>
     <script src="src/js/jquery.min.js" defer></script>
     <script src="src/js/bootstrap.min.js" defer></script>
     <script src="src/js/popper.min.js" defer></script>
@@ -37,16 +37,27 @@
    <div class="container m-5">
        <div class="row pt-5">
             <div class="row">
+              <div class="form-group col">
+                <label for="sel2">Misafidiana Faritra </label>
+                <select name="culture" id="sel1" class="form-control"  >
+                  <option value="none" selected> --TSY-MISY-- </option>
+                  <option value="Alaotra"> Alaotra </option>
+                  <option value="Analanjirofo"> Analanjirofo </option>
+                  <option value="Atsimo  Andrefana"> Atsimo  Andrefana </option>
+                </select>
+  
+              </div>
             <div class="form-group col">
               <label for="sel2">Misafidiana Fambolena: </label>
               <select name="culture" id="sel2" class="form-control"  >
-                <option value="mais"> mais </option>
-                <option value="Riz"> Riz </option>
+                <option value="none" selected> --TSY-MISY-- </option>
+                <option value="mais"> Katsaka </option>
+                <option value="Riz"> Vary </option>
               </select>
 
             </div>
             <div class="col btx">
-              <button class="btn btn-success" onclick="getvalues(document.getElementById('sel2').value)"><i class="fas fa-search"></i> Search</button>
+              <button class="btn btn-success" onclick="getvalues(document.getElementById('sel2').value,document.getElementById('sel1').value)"><i class="fas fa-search"></i> Search</button>
             </div>
             <div class="notification col">
               <h6>Notifications</h6>
