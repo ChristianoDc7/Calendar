@@ -15,7 +15,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-success shadow fixed-top px-5">
-        <div ><h3><i class="fab fa-waze"></i>We-dev</h3></div>
+        <div ><h3><i class="fas fa-cloud-sun-rain"></i>Agri-weather</h3></div>
         
         <h6>
            Calendrier Culturel de MADAGASCAR
@@ -36,11 +36,11 @@
     </nav>
    <div class="container m-5">
        <div class="row pt-5">
-            <div class="row">
+            <div class="row" style="position:relative">
               <div class="form-group col">
                 <label for="sel2">Misafidiana Faritra </label>
                 <select name="culture" id="sel1" class="form-control"  >
-                  <option value="none" selected> --TSY-MISY-- </option>
+                  <option value="none" selected> *aucun </option>
                   <option value="Alaotra"> Alaotra </option>
                   <option value="Analanjirofo"> Analanjirofo </option>
                   <option value="Atsimo  Andrefana"> Atsimo  Andrefana </option>
@@ -50,14 +50,14 @@
             <div class="form-group col">
               <label for="sel2">Misafidiana Fambolena: </label>
               <select name="culture" id="sel2" class="form-control"  >
-                <option value="none" selected> --TSY-MISY-- </option>
+                <option value="none" selected> *aucun </option>
                 <option value="mais"> Katsaka </option>
                 <option value="Riz"> Vary </option>
               </select>
 
             </div>
             <div class="col btx">
-              <button class="btn btn-success" onclick="getvalues(document.getElementById('sel2').value,document.getElementById('sel1').value)"><i class="fas fa-search"></i> Search</button>
+              <button class="btn btn-success" style="bottom:72%;position: absolute;" onclick="getvalues(document.getElementById('sel2').value,document.getElementById('sel1').value)"><i class="fas fa-search"></i> Search</button>
             </div>
             <div class="notification col">
               <h6>Notifications</h6>

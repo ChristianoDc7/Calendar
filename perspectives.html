@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/fontawesome-free-5.15.4-web/css/all.css"/>
+    <script src="src/js/jquery.min.js" defer></script>
+    <script src="src/js/bootstrap.min.js" defer></script>
+    <script src="src/js/popper.min.js" defer></script>
+    <script src="src/js/tr.js" defer></script>
+    <title>Perspectives climatiques</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-success shadow fixed-top px-5">
+        <div ><h3><i class="fas fa-cloud-sun-rain"></i>Agri-weather</h3></div>
+        
+        <h6>
+           Perspectives climatique de MADAGASCAR
+       </h6>
+       <ul>
+        <li class="nav-item dropdown pt-2">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              <i class="fas fa-flag"></i> Language
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Français</a>
+              <a class="dropdown-item" href="#">Malagasy</a>
+              <a class="dropdown-item" href="#">English</a>
+            </div>
+          </li>
+       </ul>
+     
+    </nav>
+    <div class="row pt-5 px-5" style="position:relative">
+        <div class="row">
+            <h1 class="headless">Mandritry ny volana oktobra 2020 hatramin'ny Aprily 2021</h1>
+          <div class="form-group col">
+            <label for="sel2">Volana : </label>
+            <select name="culture" id="sel1" class="form-control"  >
+              <option value="Full"> Volana rehetra  </option>
+              <option value="OCTOBRE-2020"> Octobre 2020 </option>
+              <option value="NOVEMBRE-2020"> Novembre 2020 </option>
+              <option value="DECEMBRE-2020"> Decembre 2020 </option>
+              <option value="JANVIER-2021"> Janvier 2021 </option>
+              <option value="FEVRIER-2021"> Fevrier 2021 </option>
+              <option value="MARS-2021"> Mars 2021 </option>
+              <option value="AVRIL-2021"> Avril 2021 </option>
+            </select>
+
+          </div>
+        <div class="form-group col">
+          <label for="sel2">Misafidiana Faritra: </label>
+          <select name="culture" id="sel2" class="form-control"  >
+            <option value="Fuls" selected> Faritra rehetra </option>
+            <option value="Alaotra"> Alaotra </option>
+            <option value="Analamanga"> Analamanga </option>
+            <option value="Analanjirofo"> Analanjirofo </option>
+            <option value="Anosy"> Anosy </option>
+            <option value="Atsinanana"> Atsinanana </option>
+            <option value="Boeny"> Boeny </option>
+            <option value="Diana"> Diana </option>
+            <option value="Haute-Matsiatra"> Haute-Matsiatra </option>
+            <option value="Itasy"> Itasy </option>
+            <option value="SAVA"> SAVA </option>
+          </select>
+
+        </div>
+        <div class="col">
+            <button class="btn btn-success" style="bottom:0;position: absolute;" onclick="getvalues(document.getElementById('sel1').value,document.getElementById('sel2').value)"><i class="fas fa-search"></i> Search</button>
+        </div>
+      </div>
+    </div>
+    <div id="liste" class="px-5">
+
+    </div>
+</body>
+</html>

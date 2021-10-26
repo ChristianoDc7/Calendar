@@ -1,173 +1,84 @@
+function getvalues(volana,faritra){
+    if(volana=="Full" && faritra=="Fuls"){
+        fetch('http://localhost:1337/donnees')
+        .then((response) =>response.json())
+        .then((text)=>text.sort(sortout))
+        .then((data) => generatALL(data))
 
-
-var obj;
-function getvalues(axian){
+    }else if(faritra=="Fuls" && volana!="Full"){
+        fetch('http://localhost:1337/donnees')
+        .then((response) =>response.json())
+        .then((data)=>data.filter(mois=>mois.volana.NOM.includes(volana)))
+        .then((data)=>genereg(data))
     
-    fetch('src/database/data.json')
-    .then((response) =>response.json())
-    .then((data)=>data.filter(({culture}) => culture.includes(axian)))
-    .then((data) => generate(data))
-    
-}
-function generate(resp){
-    const html = resp.map( element=>{
-        let tabs = `<table class="table table-striped mt-5" style=" text-align: center;margin-bottom: 10px" id="tableau">
-        <tr>
-        <td colspan="2" class="colonne1">
-            Region
-        </td>
-        <td colspan="24" class="colonne2" id="cult">
-            ${element.Region}
-        </td>
-    </tr>
-        <tr>
-            <td colspan="2" class="colonne1">
-                Culture
-            </td>
-            <td colspan="24" class="colonne2" id="cult">
-                ${element.culture}
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" class="colonne1">
-                variétés
-            </td>
-            <td colspan="24" class="colonne2">
-               ${element.variete}
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" class="colonne1">
-                CYCLE
-            </td>
-            <td colspan="24" class="colonne2">
-                ${element.cycle}
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" class="colonne1">
-                Mois
-            </td>
-            <td colspan="3" class="colonne3">
-                Octobre
-            </td>
-            <td colspan="3" class="colonne3">
-                Novembre
-            </td>
-            <td colspan="3" class="colonne3">
-                Décembre
-            </td>
-            <td colspan="3" class="colonne3">
-                Janvier
-            </td>
-            <td colspan="3" class="colonne3">
-                Fevrier
-            </td>
-            <td colspan="3" class="colonne3">
-                Mars
-            </td>
-            <td colspan="3" class="colonne3">
-                Avril
-            </td>
-            <td colspan="3" class="colonne3">
-                Mai
-            </td>
-    
-        </tr>
-        <tr>
-            <td colspan="2" class="colonne1">
-                DECADE
-            </td>
-            <td class="colonne3">
-                D1
-            </td>
-            <td class="colonne3">
-                D2
-            </td>
-            <td class="colonne3">
-                D3
-            </td>
-            <td class="colonne3">
-                D1
-            </td>
-            <td class="colonne3">
-                D2
-            </td>
-            <td class="colonne3">
-                D3
-            </td>
-            <td class="colonne3">
-                D1
-            </td>
-            <td class="colonne3">
-                D2
-            </td>
-            <td class="colonne3">
-                D3
-            </td>
-            <td class="colonne3">
-                D1
-            </td>
-            <td class="colonne3">
-                D2
-            </td>
-            <td class="colonne3">
-                D3
-            </td>
-            <td class="colonne3">
-                D1
-            </td>
-            <td class="colonne3">
-                D2
-            </td>
-            <td class="colonne3">
-                D3
-            </td>
-            <td class="colonne3">
-                D1
-            </td>
-            <td class="colonne3">
-                D2
-            </td>
-            <td class="colonne3">
-                D3
-            </td>
-            <td class="colonne3">
-                D1
-            </td>
-            <td class="colonne3">
-                D2
-            </td>
-            <td class="colonne3">
-                D3
-            </td>
-            <td class="colonne3">
-                D1
-            </td>
-            <td class="colonne3">
-                D2
-            </td>
-            <td class="colonne3">
-                D3
-            </td>
-        </tr>`
-
- function grest(){
-    var tr; 
-    let tableau=document.getElementById('tableau') 
-    if(`${element.rep_start}`!="null"){
-        tr = document.createElement('tr')
-        echo = document.createElement("td")
-        echo.setAttribute("id","andraso")
-        tr.appendChild(echo)
-        tableau.appendChild(tr)
+    }else if(faritra!="Fuls" && volana=="Full"){
+        fetch('http://localhost:1337/donnees')
+        .then((response) =>response.json())
+        .then((data)=>data.filter(region=>region.faritany.NOM.includes(faritra)))
+        .then((data) => genemoi(data))
+    }else{
+        fetch('http://localhost:1337/donnees')
+        .then((response) =>response.json())
+        .then((data)=>data.filter(mois=>mois.volana.NOM.includes(volana) && mois.faritany.NOM.includes(faritra)))
+        .then((data) => gene2(data))
     }
     
- }
- 
     
+}
+function generatALL(resp){
+    const tabls = `<table class="table table-striped mt-5" style=" text-align: center;margin-bottom: 10px" id="tableau">
+    <tr>
+        <td> Mois </td> <td> Region </td> <td> Température Moyenne </td> <td> Précipitation Maximale </td> <td> Précipitation minimale </td> 
+    </tr>`
+    const html = resp.map(element => {
+        let month = `${element.volana.NOM}`
+        let liste = `<tr> 
+        <td> ${month} </td> <td>${element.faritany.NOM}</td> <td>  ${element.T_Moy}</td> <td> ${element.Prec_max}</td> <td> ${element.Prec_min}</td>`
+        return liste
+    }
+    ).join('')
+    document.getElementById('liste').innerHTML=tabls+html+"</table>"
+}
+function genereg(resp){
+    const tabls = `<table class="table table-striped mt-5" style=" text-align: center;margin-bottom: 10px" id="tableau">
+    <tr>
+        <td> Region </td> <td> Température Moyenne </td> <td> Précipitation Maximale </td> <td> Précipitation minimale </td> 
+    </tr>`
+    const html = resp.map(element => {
+        let liste = `<tr><td>${element.faritany.NOM}</td> <td>  ${element.T_Moy}</td> <td> ${element.Prec_max}</td> <td> ${element.Prec_min}</td></tr>`
+        return liste
+    }
+    ).join('')
+    document.getElementById('liste').innerHTML=tabls+html+"</table>"
+}
+function gene2(resp){
+    const tabls = `<table class="table table-striped mt-5" style=" text-align: center;margin-bottom: 10px" id="tableau">
+    <tr>
+        <td> Mois </td> <td> Region </td> <td> Température Moyenne </td> <td> Précipitation Maximale </td> <td> Précipitation minimale </td> 
+    </tr>`
+    const html = resp.map(element => {
+        let liste = `<tr><td> ${element.volana.NOM} </td> <td>${element.faritany.NOM}</td> <td>  ${element.T_Moy}</td> <td> ${element.Prec_max}</td> <td> ${element.Prec_min}</td></tr>`
+        return liste
+    }
+    ).join('')
+    document.getElementById('liste').innerHTML=tabls+html+"</table>"
+}
+function genemoi(resp){
+    const tabls = `<table class="table table-striped mt-5" style=" text-align: center;margin-bottom: 10px" id="tableau">
+    <tr>
+        <td> Mois </td> <td> Température Moyenne </td> <td> Précipitation Maximale </td> <td> Précipitation minimale </td> 
+    </tr>`
+    const html = resp.map(element => {
+        let liste = `<tr><td> ${element.volana.NOM} </td> <td>  ${element.T_Moy}</td> <td> ${element.Prec_max}</td> <td> ${element.Prec_min}</td></tr>`
+        return liste
+    }
+    ).join('')
+    document.getElementById('liste').innerHTML=tabls+html+"</table>"
+}
 
-        return tabs + '</table>' + grest()
-    }).join('')
-    document.getElementById('geer').innerHTML = html
+function sortout(x,y){
+    return ((x.volana.id == y.volana.id) ? 0 : ((x.volana.id > y.volana.id) ? 1 : -1));
+}
+function asortby(x,y){
+    return ((x.title == y.title) ? 0 : ((x.title < y.title) ? 1 : -1));
 }

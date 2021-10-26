@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat:ital,wght@0,800;1,300;1,400&display=swap');
 li{
     list-style: none
+}
+.headless{
+    font-family: 'Architects Daughter', cursive;
+
 }
 .navbar{
     color: white;
@@ -21,9 +26,7 @@ li{
 .nav-link:hover{
     color: white
 }
-.btx{
-    transform: translateY(9.5%)
-}
+
 .ovf{
     overflow-y: scroll;
     max-height: 200px;
@@ -47,7 +50,7 @@ li{
     border-radius: 8px;
   }
 
-  @keyframes backchange{
+/*   @keyframes backchange{
     0%{
         background-image: url(../img/paysage-rural-maisons-madagascar.jpg);
         
@@ -65,12 +68,13 @@ li{
         background-image: url(../img/paysage-rural-maisons-madagascar.jpg);
         
     }
-}
+} */
 body{
     animation: backchange 25s infinite forwards;
     
     background-attachment: fixed;
-    background-repeat: no-repeat
+    background-repeat: no-repeat;
+    overflow-x: hidden;
 }
 label{
     color: white;
@@ -102,12 +106,9 @@ table{
 }
 .red{
     background-color: var(--bs-red) !important;
-<<<<<<< HEAD
 }
 @media screen and (max-width: 600px){
   nav h6{
       display: none
   }
-=======
->>>>>>> ec1f28f3b6b64039dbd8af5990743acbd01b4659
 }
