@@ -10,16 +10,19 @@
     <script src="src/js/jquery.min.js" defer></script>
     <script src="src/js/bootstrap.min.js" defer></script>
     <script src="src/js/popper.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="src/js/tr.js" defer></script>
     <title>Perspectives climatiques</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-success shadow fixed-top px-5">
-        <div ><h3><i class="fas fa-cloud-sun-rain"></i>Agri-weather</h3></div>
-        
-        <h6>
-           Perspectives climatique de MADAGASCAR
-       </h6>
+    <nav class="navbar navbar-expand-md bg-success shadow-lg fixed-top px-5">
+      <div><h4><i class="fas fa-cloud-sun-rain"></i>Agri-weather</h4></div>
+      <li>
+        <a href="index.html" class="nav-link">Calendrier</a>
+      </li>
+      <li>
+        <a href="perspectives.html" class="nav-link">Perspectives climatiques</a>
+      </li>
        <ul>
         <li class="nav-item dropdown pt-2">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -31,12 +34,13 @@
               <a class="dropdown-item" href="#">English</a>
             </div>
           </li>
+
        </ul>
      
     </nav>
     <div class="row pt-5 px-5" style="position:relative">
         <div class="row">
-            <h1 class="headless">Mandritry ny volana oktobra 2020 => Aprily 2021</h1>
+            <h1 class="headless text-success">Mandritry ny volana oktobra 2020 => Aprily 2021</h1>
           <div class="form-group col">
             <label for="sel2">Volana : </label>
             <select name="culture" id="sel1" class="form-control"  >
@@ -72,9 +76,11 @@
             <button class="btn btn-success" style="bottom:0;position: absolute;" onclick="getvalues(document.getElementById('sel1').value,document.getElementById('sel2').value)"><i class="fas fa-search"></i> Search</button>
         </div>
       </div>
-    </div>
+    </div>   
     <div id="liste" class="px-5">
-
     </div>
+    <div class="px-5">
+      <canvas id="myChart" width="400" height="100"></canvas>
+    </div> 
 </body>
 </html>

@@ -14,26 +14,29 @@
     <title>Agri calendar</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-success shadow fixed-top px-5">
-        <div ><h3><i class="fas fa-cloud-sun-rain"></i>Agri-weather</h3></div>
-        
-        <h6>
-           Calendrier Culturel de MADAGASCAR
-       </h6>
-       <ul>
-        <li class="nav-item dropdown pt-2">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-              <i class="fas fa-flag"></i> Language
-            </a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Français</a>
-              <a class="dropdown-item" href="#">Malagasy</a>
-              <a class="dropdown-item" href="#">English</a>
-            </div>
-          </li>
-       </ul>
-     
-    </nav>
+  <nav class="navbar navbar-expand-md bg-success shadow-lg fixed-top px-5">
+    <div><h4><i class="fas fa-cloud-sun-rain"></i>Agri-weather</h4></div>
+    <li>
+      <a href="index.html" class="nav-link">Calendrier</a>
+    </li>
+    <li>
+      <a href="perspectives.html" class="nav-link">Perspectives climatiques</a>
+    </li>
+     <ul>
+      <li class="nav-item dropdown pt-2">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            <i class="fas fa-flag"></i> Language
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Français</a>
+            <a class="dropdown-item" href="#">Malagasy</a>
+            <a class="dropdown-item" href="#">English</a>
+          </div>
+        </li>
+
+     </ul>
+   
+  </nav>
    <div class="container m-5">
        <div class="row pt-5">
             <div class="row" style="position:relative">
@@ -60,13 +63,13 @@
               <button class="btn btn-success" style="bottom:72%;position: absolute;" onclick="getvalues(document.getElementById('sel2').value,document.getElementById('sel1').value)"><i class="fas fa-search"></i> Search</button>
             </div>
             <div class="notification col">
-              <h6>Notifications</h6>
+              <h6>Notifications  <i class="far fa-bell"></i></h6>
               <div class="container ovf mt-3">
                   <div class="media  p-3">
                       <img src="src/img/vanille.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
                       <div class="media-body">
-                        <h6>Vanille <small><i>Exportation de vanille </i></small></h6>
-                        <p>La fin de saison 2020-2021 repoussée au 30 juin. Contre toute attente, la filière vanille affiche une bonne performance pour Madagascar, malgré la crise mondiale de la pandémie de Covid-19, qui touche divers secteurs d'activité économique.</p>      
+                        <h6>Vanille <br><small><i>Exportation de vanille </i></small></h6>
+                        <p>Madagascar exporte principalement la vanille vers les Etats-Unis, la France, le Canada, les Pays-Bas, l'Allemagne et la Suisse. Si la saison dernière nous avons exporté 2350 tonnes, cette année elle s'annonce également prometteuse en termes de quantité et de qualité.</p>      
                       </div>
                     </div>
                   <div class="media  p-3">

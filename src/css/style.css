@@ -26,6 +26,9 @@ li{
 .nav-link:hover{
     color: white
 }
+.nav-link:active{
+    color: white;
+}
 
 .ovf{
     overflow-y: scroll;
