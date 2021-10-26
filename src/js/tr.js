@@ -1,5 +1,5 @@
 //charts
-const ctx = document.getElementById('myChart').getContext('2d');
+/* const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -33,7 +33,7 @@ const myChart = new Chart(ctx, {
             }
         }
     }
-});
+}); */
 
 
 
@@ -82,6 +82,7 @@ function generatALL(resp){
     document.getElementById('liste').innerHTML=tabls+html+"</table>"
 }
 function genereg(resp){
+    //pour le tableau
     const tabls = `<table class="table table-striped mt-5" style=" text-align: center;margin-bottom: 10px" id="tableau">
     <tr>
         <td> Region </td> <td> Température Moyenne </td> <td> Précipitation Maximale </td> <td> Précipitation minimale </td> 
@@ -91,6 +92,51 @@ function genereg(resp){
         return liste
     }
     ).join('')
+
+    //pour le graphe
+    const prechar = resp.map(element => {
+        let label = `${element.faritany.NOM}`
+        return label
+    })
+    const valchar = resp.map(element => {
+        let value = `${element.Prec_max}`
+        return value
+    })
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const moischart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: prechar,
+            datasets: [{
+                label: 'Precipitation',
+                data: valchar ,
+                backgroundColor: [
+                    'rgba(255, 99, 132)',
+                    'rgba(54, 162, 235)',
+                    'rgba(255, 206, 86)',
+                    'rgba(75, 192, 192)',
+                    'rgba(153, 102, 255)',
+                    'rgba(255, 159, 64)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
     document.getElementById('liste').innerHTML=tabls+html+"</table>"
 }
 function gene2(resp){
