@@ -1,47 +1,16 @@
-//charts
-/* const ctx = document.getElementById('myChart').getContext('2d');
-const myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: 'Perspective Climatique',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132)',
-                'rgba(54, 162, 235)',
-                'rgba(255, 206, 86)',
-                'rgba(75, 192, 192)',
-                'rgba(153, 102, 255)',
-                'rgba(255, 159, 64)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-}); */
-
-
-
-
-
+function showtable(){
+    document.getElementById('cnv').style.display="none"
+    document.getElementById('liste').style.display="block"
+}
+showtable()
+function showgraph(){
+    document.getElementById('cnv').style.display="block"
+    document.getElementById('liste').style.display="none"
+}
 //fetch request
 function getvalues(volana,faritra){
     if(volana=="Full" && faritra=="Fuls"){
+        document.getElementById('myChart').innerHTML=""
         fetch('http://localhost:1337/donnees')
         .then((response) =>response.json())
         .then((text)=>text.sort(sortout))
@@ -59,6 +28,7 @@ function getvalues(volana,faritra){
         .then((data)=>data.filter(region=>region.faritany.NOM.includes(faritra)))
         .then((data) => genemoi(data))
     }else{
+        document.getElementById('myChart').innerHTML=""
         fetch('http://localhost:1337/donnees')
         .then((response) =>response.json())
         .then((data)=>data.filter(mois=>mois.volana.NOM.includes(volana) && mois.faritany.NOM.includes(faritra)))
@@ -152,6 +122,7 @@ function gene2(resp){
     document.getElementById('liste').innerHTML=tabls+html+"</table>"
 }
 function genemoi(resp){
+    //pour le tableau
     const tabls = `<table class="table table-striped mt-5" style=" text-align: center;margin-bottom: 10px" id="tableau">
     <tr>
         <td> Mois </td> <td> Température Moyenne </td> <td> Précipitation Maximale </td> <td> Précipitation minimale </td> 
@@ -161,6 +132,51 @@ function genemoi(resp){
         return liste
     }
     ).join('')
+
+    //pour le graphe
+    const prechar = resp.map(element => {
+        let label = `${element.volana.NOM}`
+        return label
+    })
+    const valchar = resp.map(element => {
+        let value = `${element.Prec_max}`
+        return value
+    })
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const moischart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: prechar,
+            datasets: [{
+                label: 'Precipitation',
+                data: valchar ,
+                backgroundColor: [
+                    'rgba(255, 99, 132)',
+                    'rgba(54, 162, 235)',
+                    'rgba(255, 206, 86)',
+                    'rgba(75, 192, 192)',
+                    'rgba(153, 102, 255)',
+                    'rgba(255, 159, 64)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
     document.getElementById('liste').innerHTML=tabls+html+"</table>"
 }
 

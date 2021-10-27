@@ -33,7 +33,7 @@ li{
 .ovf{
     overflow-y: scroll;
     max-height: 200px;
-    color: white !important;
+    color: gray !important;
     min-width: 300px
   }
 .media-body{
@@ -81,12 +81,8 @@ body{
     background: radial-gradient(circle, rgba(63,251,231,1) 0%, rgba(70,252,150,1) 100%);
     overflow-x: hidden;
 }
-label{
-    color: white;
-}
-.notification h6{
-    color: white
-}
+
+
 .colonne1{
     background-color: rgb(29, 29, 29) !important;
     color: white;

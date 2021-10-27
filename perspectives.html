@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="src/css/bootstrap.min.css">
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/fontawesome-free-5.15.4-web/css/all.css"/>
+    <link rel="icon" type="image/x-icon" href="src/img/icon/climate-icon-0.jpg">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme_color" content="#198754">
     <script src="src/js/jquery.min.js" defer></script>
     <script src="src/js/bootstrap.min.js" defer></script>
     <script src="src/js/popper.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="node_modules/chart.js/dist/chart.min.js"></script>
     <script src="src/js/tr.js" defer></script>
+    <script src="src/js/app.js" defer></script>
     <title>Perspectives climatiques</title>
 </head>
 <body>
@@ -39,9 +43,9 @@
      
     </nav>
     <div class="row pt-5 px-5" style="position:relative">
-        <div class="row">
+        <div class="row text-success">
             <h1 class="headless text-success">Mandritry ny volana oktobra 2020 => Aprily 2021</h1>
-          <div class="form-group col">
+          <div class="form-group col ">
             <label for="sel2">Volana : </label>
             <select name="culture" id="sel1" class="form-control"  >
               <option value="Full"> Volana rehetra  </option>
@@ -75,12 +79,17 @@
         <div class="col">
             <button class="btn btn-success" style="bottom:0;position: absolute;" onclick="getvalues(document.getElementById('sel1').value,document.getElementById('sel2').value)"><i class="fas fa-search"></i> Search</button>
         </div>
+        <div class="col d-flex flex-row " >
+            <label for="az" class="mx-2" style="position: absolute;bottom: 0; cursor: pointer;"><input type="radio" name="za" id="az" onfocus="showtable()" checked >  Table </label><br>
+            <label for="za" class="mx-2" style="position: absolute;bottom: 0;right: 14%; cursor: pointer;"><input type="radio" name="za" id="za" onfocus="showgraph()" >  Graphe </label><br>
+        </div>
       </div>
     </div>   
-    <div id="liste" class="px-5">
-    </div>
-    <div class="px-5">
+    <div class="px-5" id="cnv">
       <canvas id="myChart" width="400" height="100"></canvas>
     </div> 
+    <div id="liste" class="px-5">
+    </div>
+
 </body>
 </html>

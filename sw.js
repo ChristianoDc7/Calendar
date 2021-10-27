@@ -1,46 +1,40 @@
-const CACHE_NAME = 'pwa-cache-v1'; // cache name and version number (update version number for each update)
-const CONTENT_TO_CACHE = [
+const staticCacheName = 'site-static'
+const assets = [
     '/',
     '/index.html',
-    '/scripts/app.js',
-    '/styles/styles.css',
-    '/assets/icons/android-chrome-192x192.png',
-    '/assets/icons/android-chrome-512x512.png',
-    '/assets/icons/apple-touch-icon.png',
-    '/assets/icons/favicon-16x16.png',
-    '/assets/icons/favicon-32x32.png',
-    '/assets/icons/mstile-150x150.png',
-    '/assets/icons/safari-pinned-tab.svg'
-];
-
-// Install event
-self.addEventListener('install', function (e) {
-    console.log('Service Worker -- Install');
-
-    e.waitUntil(
-        caches.open(cacheName).then(function (cache) {
-            console.log('Service Worker -- Caching all: app shell and content');
-            return cache.addAll(contentToCache);
-        })
-    );
+    '/persperctives.html',
+    '/src/js/app.js',
+    '/src/js/bootstrap.min.js',
+    '/src/js/jquery.min.js',
+    '/src/js/popper.min.js',
+    '/src/js/script.js',
+    '/src/js/tr.js',
+    '/src/css/bootstrap.min.css',
+    '/src/css/style.css',
+    '/src/database/data.json',
+    '/src/img/climate-icon-0.jpg',
+    '/src/css/fontawesome-free-5.15.4-web/css/all.css',
+    '/package-lock.json',
+    '/node_modules/chart.js/dist/chart.min.js'
+]
+//install service workers
+self.addEventListener('install', evt =>{
+    //console.log('service worker installé')
+    evt.waitUntil(
+        caches.open(staticCacheName).then(cache => {
+            console.log('caching shell assets');
+            cache.addAll(assets);
+    })
+  );
+    
 });
 
-// Fetching content using Service Worker
-self.addEventListener('fetch', function(e) {
-    e.respondWith(
-            caches.match(e.request).then(function (response) {
-                if (response) {
-                    console.debug('Service Worker -- Get data from cache: ' + e.request.url);
-                    return response;
-                }
-    
-                return fetch(e.request).then(function (response) {
-                    return caches.open(CACHE_NAME).then(function (cache) {
-                        console.debug('Service Worker -- Fetch and caching new resource: ' + e.request.url);
-                        cache.put(e.request, response.clone());
-                        return response;
-                    });
-                });
-            })
-        );
-    });
+//activate service workers 123
+self.addEventListener('activate',evt => {
+    //console.log('service worker activé')
+})
+
+//fetch event 
+self.addEventListener('fetch',evt => {
+    //console.log('fetch event',evt)
+})

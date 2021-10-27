@@ -1,0 +1,67 @@
+{
+
+    "name": "Agri Weather",
+  
+    "short_name": "AgriWeather",
+  
+    "theme_color": "#198754",
+  
+    "background_color": "#fafafa",
+  
+    "display": "standalone",
+    
+    "orientation":"portrait-primary",
+  
+    "start_url": "/index.html",
+  
+    "icons": [
+  
+      {
+  
+        "src": "src/img/icon/climate-icon-0.jpg",
+  
+        "sizes": "330x240",
+  
+        "type": "image/png"
+  
+      },
+      {
+  
+        "src": "src/img/icon/icon-72x72.png",
+  
+        "sizes": "72x72",
+  
+        "type": "image/png"
+  
+      },
+      {
+  
+        "src": "src/img/icon/icon-96x96.png",
+  
+        "sizes": "96x96",
+  
+        "type": "image/png"
+  
+      },
+      {
+  
+        "src": "src/img/icon/icon-128x128.png",
+        "sizes": "128x128",
+  
+        "type": "image/png"
+  
+      },
+      {
+  
+        "src": "src/img/icon/icon-144x144.png",
+  
+        "sizes": "144x144",
+  
+        "type": "image/png"
+  
+      }
+  
+    ]
+  
+  }
+  
