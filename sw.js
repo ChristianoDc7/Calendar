@@ -57,7 +57,10 @@ self.addEventListener('fetch',evt => {
                     return fetchRes;
                 })
             });
-        }
-            )
-    )
+        }).catch(()=>{
+            if(evt.request.url.indexOf('html')>-1){
+                return cache.match('error.html')
+            }
+        })
+    );
 })
