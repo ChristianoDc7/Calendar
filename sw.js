@@ -38,8 +38,7 @@ var STATIC_FILES = [
     '/package-lock.json',
     '/node_modules/chart.js/dist/chart.min.js',
     '/src/img/icon/climate-icon-0.jpg',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css',
-    'src/css/fontawesome-free-5.15.4-web/css/all.css'
+    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css'
 ];
 
 self.addEventListener('install', event => {
