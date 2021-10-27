@@ -39,7 +39,7 @@ self.addEventListener('activate',evt => {
     evt.waitUntil(
         caches.keys().then(keys=>{
             return Promise.all(keys
-                .filter(key => key !== cachename)
+                .filter(key => key != dynamicCache)
                 .map(key => caches.delete(key))
             )
         })
@@ -57,10 +57,7 @@ self.addEventListener('fetch',evt => {
                     return fetchRes;
                 })
             });
-        }).catch(()=>{
-            if(evt.request.url.indexOf('html')>-1){
-                return cache.match('error.html')
-            }
-        })
-    );
+        }
+            )
+    )
 })
