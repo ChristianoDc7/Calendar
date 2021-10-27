@@ -205,7 +205,7 @@ function generate(resp){
     const html = resp.map( element=>{
         let tabs = `<table class="table table-striped mt-5" style=" text-align: center;margin-bottom: 10px" id="tableau">
         <tr>
-        <td colspan="2" class="colonne1">
+        <td colspan="2" class="colonne3">
             Region
         </td>
         <td colspan="24" class="colonne2" id="cult">
@@ -213,7 +213,7 @@ function generate(resp){
         </td>
     </tr>
         <tr>
-            <td colspan="2" class="colonne1">
+            <td colspan="2" class="colonne4">
                 Culture
             </td>
             <td colspan="24" class="colonne2" id="cult">
@@ -221,7 +221,7 @@ function generate(resp){
             </td>
         </tr>
         <tr>
-            <td colspan="2" class="colonne1">
+            <td colspan="2" class="colonne3">
                 variétés
             </td>
             <td colspan="24" class="colonne2">
@@ -229,7 +229,7 @@ function generate(resp){
             </td>
         </tr>
         <tr>
-            <td colspan="2" class="colonne1">
+            <td colspan="2" class="colonne4">
                 CYCLE
             </td>
             <td colspan="24" class="colonne2">
@@ -237,7 +237,7 @@ function generate(resp){
             </td>
         </tr>
         <tr>
-            <td colspan="2" class="colonne1">
+            <td colspan="2" class="colonne3">
                 Mois
             </td>
             <td colspan="3" class="colonne3">
@@ -266,80 +266,80 @@ function generate(resp){
             </td>
     
         </tr>
-        <tr>
-            <td colspan="2" class="colonne1">
+        <tr class="colonne4">
+            <td colspan="2" class="colonne4">
                 DECADE
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D1
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D2
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D3
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D1
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D2
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D3
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D1
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D2
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D3
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D1
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D2
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D3
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D1
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D2
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D3
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D1
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D2
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D3
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D1
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D2
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D3
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D1
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D2
             </td>
-            <td class="colonne3">
+            <td class="colonne4">
                 D3
             </td>
         </tr>`
@@ -349,7 +349,7 @@ function generate(resp){
         let prepa;
         if (`${element.Prepa_sol_start}`!="null"){
             prepa= `<tr>
-        <td colspan="2" class="colonne1">
+        <td colspan="2" class="colonne3">
             Préparation du sol
         </td>
         ${tablu(element.Prepa_sol_start,element.prepa_sol_end)}
@@ -365,7 +365,7 @@ function generate(resp){
     let semis;
     if (`${element.semis_start}`!="null"){
     semis = `<tr>
-        <td colspan="2" class="colonne1">
+        <td colspan="2" class="colonne4">
             Semis/plantation
         </td>
         ${tablu(element.semis_start,element.semi_end)}
@@ -379,7 +379,7 @@ function generate(resp){
     let repi;
     if (`${element.rep_start}`!="null"){
     repi = `<tr>
-        <td colspan="2" class="colonne1">
+        <td colspan="2" class="colonne3">
             Repiquage
         </td>
         ${tablu(element.rep_start,element.rep_end)}
@@ -403,22 +403,22 @@ function generate(resp){
         };
         
         fert = `<tr>
-        <td rowspan="${i}" class="colonne1">
+        <td rowspan="${i}" class="colonne4">
             Fertilisation
         </td>
-        <td class="colonne1">
+        <td class="colonne4">
             1er
         </td>
         ${tablu(element.fert_1_sart,element.fert_1_end)}
     </tr>
     <tr>
-        <td class="colonne1">
+        <td class="colonne3">
             2ème
         </td>
         ${tablu(element.fert_2_start,element.fert_2_end)}
     </tr>
 <tr ${cls}>
-    <td class="colonne1" >
+    <td class="colonne4" >
         3ème
     </td>
     ${tablu(element.fert_3_start,element.fert_3_end)}
@@ -442,16 +442,16 @@ if (`${element.sarc_1_start }`!="null"){
             
         };
     sarc = `<tr>
-       <td rowspan="${j}" class="colonne1">
+       <td rowspan="${j}" class="colonne3">
             Sarclage
         </td>
-        <td class="colonne1">
+        <td class="colonne4">
             1er
         </td>
         ${tablu(element.sarc_1_start,element.sarc_1_end)}
     </tr>
     <tr ${karc}>
-        <td class="colonne1" >
+        <td class="colonne3" >
             2ème
         </td>
         ${tablu(element.sarc_2_start,element.sarc_2_end)}
@@ -475,16 +475,16 @@ if (`${element.but_1_start }`!="null"){
             larc=""
         };
     butt  = `<tr>
-        <td rowspan="${k}" class="colonne1">
+        <td rowspan="${k}" class="colonne3">
             Buttage
         </td>
-        <td class="colonne1" >
+        <td class="colonne3" >
             1er
         </td>
         ${tablu(element.but_1_start,element.but_1_end)}
     </tr>
     <tr ${larc}>
-        <td class="colonne1">
+        <td class="colonne4">
             2ème
         </td>
         ${tablu(element.but_2_start,element.but_2_end)}
@@ -498,7 +498,7 @@ if (`${element.but_1_start }`!="null"){
     
 //recolte
 let recl = `<tr>
-        <td colspan="2" class="colonne1">
+        <td colspan="2" class="colonne3">
             Recolte
         </td>
         ${tablu(element.rec_start,element.rec_end)}

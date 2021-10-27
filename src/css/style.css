@@ -77,8 +77,8 @@ body{
     
     background-attachment: fixed;
     background-repeat: no-repeat; */
-    background: rgb(63,251,231);
-    background: radial-gradient(circle, rgba(63,251,231,1) 0%, rgba(70,252,150,1) 100%);
+  /*   background: rgb(63,251,231);
+    background: radial-gradient(circle, rgba(63,251,231,1) 0%, rgba(70,252,150,1) 100%); */
     overflow-x: hidden;
 }
 
@@ -91,22 +91,25 @@ body{
     padding-top: 5px;
     padding-bottom: 5px;
   }
-
+.colonne4{
+    background-color: #d6f4e2 !important;
+    color: #727272
+}
   .colonne2{
-    background-color: var(--bs-primary) !important;
-    color: white
+    color: #727272;
   }
   .colonne3{
-    background-color: #fd7e14 !important
+    background-color: #ade8c4 !important;
+    color: #727272;
   }
 table{
     background-color: white
 }
 .blue{
-    background-color: var(--bs-primary) !important;
+    background-color: #b7b7b7 !important;
 }
 .red{
-    background-color: var(--bs-red) !important;
+    background-color: #ade8c4 !important;
 }
 @media screen and (max-width: 600px){
   nav h6{
