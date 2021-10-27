@@ -23,22 +23,7 @@ importScripts('https://cdnjs.cloudflare.com/ajax/libs/cache.adderall/1.0.0/cache
 const cachename = 'cache-v2'
 const dynamicCache = "dynamic-cache-v1"
 var STATIC_FILES = [
-  '/',
-  'index.html',
-  'perspectives.html',
-  '/src/js/app.js',
-  '/src/js/bootstrap.min.js',
-  '/src/js/jquery.min.js',
-  '/src/js/popper.min.js',
-   '/src/js/script.js',
-   '/src/js/tr.js',
-    '/src/css/bootstrap.min.css',
-    '/src/css/style.css',
-    '/src/database/data.json',
-    '/package-lock.json',
-    '/node_modules/chart.js/dist/chart.min.js',
-    '/src/img/icon/climate-icon-0.jpg',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css'
+  '/'
 ];
 
 self.addEventListener('install', event => {
