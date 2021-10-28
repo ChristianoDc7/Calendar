@@ -17,21 +17,21 @@
     <title>Forum fifanampiana</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md bg-success shadow-lg fixed-top px-5">
-        <div><h4><i class="fas fa-cloud-sun-rain"></i>Agri-weather</h4></div>
+    <nav class="navbar navbar-expand-md bg-success shadow-lg fixed-top px-2 pt-0">
+        <div><img src="src/img/logoET.png" class="logo" alt=""></div>
         <li>
-          <a href="index.html" class="nav-link">Calendrier</a>
+          <a href="index.html" class="nav-link nav-under">Calendrier</a>
         </li>
         <li>
-          <a href="perspectives.html" class="nav-link">Perspectives climatiques</a>
+          <a href="perspectives.html" class="nav-link nav-under">Perspectives climatiques</a>
         </li>
         <li>
-          <a href="forum.html" class="nav-link">Forum</a>
+          <a href="forum.html" class="nav-link nav-under">Forum</a>
         </li>
          <ul>
           <li class="nav-item dropdown pt-2">
-              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                <i class="fas fa-flag"></i> Language
+              <a class="nav-link nav-under" href="#" id="navbardrop" data-toggle="dropdown">
+                <i class="fas fa-flag"></i> Language <i class="fas fa-caret-down"></i>
               </a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Français</a>
@@ -39,22 +39,20 @@
                 <a class="dropdown-item" href="#">English</a>
               </div>
             </li>
-  
          </ul>
        
       </nav>
     <div class="container mt-5">
         <div class="row mt-3">
             <div class="col-md-6">
-                <h3>
-                    Add new post
-                </h3>
+                <h1 class="headless text-success">Forum de partage</h1>
                 <form action="" class="add-form-post">
+                    <div class="marg"></div>
                     <div class="form-group">
                         <label for="name">
                             Nom
                         </label>
-                        <input type="text" class="form-control" name="" id="name-value">
+                        <input type="text" class="form-control" name="" id="name-value" required>
                     </div>
                     <div class="form-group">
                         <label for="title">
@@ -64,18 +62,17 @@
                     </div>
                     <div class="form-group">
                         <label for="body">Message</label>
-                        <textarea name="" class="form-control" id="body-value"></textarea>
+                        <textarea name="" class="form-control" id="body-value" required></textarea>
                     </div>
-                    <button type="submit" class="btn my-3 btn-primary">
+                    <button type="submit" class="btn my-3 btn-success">
                         Add Post
                     </button>
-
                 </form>
             </div>
         </div>
-        <div class="post-list row" id="postmaro">
-            
-        </div>
+            <div class="post-list row" id="postmaro">
+                
+            </div>
     </div>
 </body>
 </html>

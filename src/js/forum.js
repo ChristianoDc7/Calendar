@@ -11,7 +11,7 @@ let output='';
 const renderpost = (posts)=>{
     posts.forEach(post=>{
         output+=`
-        <div class="card col-md-6 mt-4 bg-light">
+        <div class="card col-md-12 mt-4 bg-light">
                 <div class="card-body">
                     <h5 class="card-title">
                        ${post.Nom}

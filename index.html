@@ -18,21 +18,21 @@
     <title>Agri Weather</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-md bg-success shadow-lg fixed-top px-5">
-    <div><h4><i class="fas fa-cloud-sun-rain"></i>Agri-weather</h4></div>
+  <nav class="navbar navbar-expand-md bg-success shadow-lg fixed-top px-2 pt-0">
+    <div><img src="src/img/logoET.png" class="logo" alt=""></div>
     <li>
-      <a href="index.html" class="nav-link">Calendrier</a>
+      <a href="index.html" class="nav-link nav-under">Calendrier</a>
     </li>
     <li>
-      <a href="perspectives.html" class="nav-link">Perspectives climatiques</a>
+      <a href="perspectives.html" class="nav-link nav-under">Perspectives climatiques</a>
     </li>
     <li>
-      <a href="forum.html" class="nav-link">Forum</a>
+      <a href="forum.html" class="nav-link nav-under">Forum</a>
     </li>
      <ul>
       <li class="nav-item dropdown pt-2">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            <i class="fas fa-flag"></i> Languages
+          <a class="nav-link nav-under" href="#" id="navbardrop" data-toggle="dropdown">
+            <i class="fas fa-flag"></i> Language <i class="fas fa-caret-down"></i>
           </a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="#">Français</a>
@@ -40,57 +40,55 @@
             <a class="dropdown-item" href="#">English</a>
           </div>
         </li>
-
      </ul>
    
   </nav>
-   <div class="container m-5">
-       <div class="row pt-5">
-            <div class="row text-success" style="position:relative">
-              <div class="form-group col">
-                <label for="sel2">Misafidiana Faritra </label>
-                <select name="culture" id="sel1" class="form-control"  >
+   <div class="container mx-5 mt-4">
+       <div class="row pt-3">
+        <h1 class="headless text-success">Calendrier culturel </h1>
+          <div class="row">
+              <div class="row col-md-9 text-success" style="position:relative">
+                  <div class="form-group col-12">
+                    <label for="sel2">Misafidiana Faritra </label>
+                    <select name="culture" id="sel1" class="form-control"  >
+                      <option value="none" selected> *aucun </option>
+                      <option value="Alaotra"> Alaotra </option>
+                      <option value="Analanjirofo"> Analanjirofo </option>
+                      <option value="Atsimo  Andrefana"> Atsimo  Andrefana </option>
+                    </select>
+                  </div>
+              <div class="form-group col-12">
+                <label for="sel2">Misafidiana Fambolena: </label>
+                <select name="culture" id="sel2" class="form-control"  >
                   <option value="none" selected> *aucun </option>
-                  <option value="Alaotra"> Alaotra </option>
-                  <option value="Analanjirofo"> Analanjirofo </option>
-                  <option value="Atsimo  Andrefana"> Atsimo  Andrefana </option>
+                  <option value="mais"> Katsaka </option>
+                  <option value="Riz"> Vary </option>
                 </select>
-  
               </div>
-            <div class="form-group col">
-              <label for="sel2">Misafidiana Fambolena: </label>
-              <select name="culture" id="sel2" class="form-control"  >
-                <option value="none" selected> *aucun </option>
-                <option value="mais"> Katsaka </option>
-                <option value="Riz"> Vary </option>
-              </select>
-
-            </div>
-            <div class="col btx">
-              <button class="btn btn-success" style="bottom:72%;position: absolute;" onclick="getvalues(document.getElementById('sel2').value,document.getElementById('sel1').value)"><i class="fas fa-search"></i> Search</button>
-            </div>
-            <div class="notification col">
-              <h6>Notifications  <i class="far fa-bell"></i></h6>
-              <div class="ovf">
-                  <div class="media p-1">
-                      <img src="src/img/vanille.png" alt="John Doe" class="rounded-circle" style="width:60px;">
-                      <div class="media-body">
-                        <h6>Vanille <br><small><i>Exportation de vanille </i></small></h6>
-                        <p>Madagascar exporte principalement la vanille vers les Etats-Unis, la France, le Canada, les Pays-Bas, l'Allemagne et la Suisse. Si la saison dernière nous avons exporté 2350 tonnes, cette année elle s'annonce également prometteuse en termes de quantité et de qualité.</p>      
-                      </div>
-                    </div>
-                  <div class="media  p-1">
-                    <img src="src/img/fruits33_letchis.jpg" alt="John Doe" class=" rounded-circle" style="width:60px;">
-                    <div class="media-body">
-                      <h6>Letchis <small><i>Saison en approche</i></small></h6>
-                      <p>Fruit star des fêtes de noël et de fin d’année en Europe, le litchi de Madagascar figure parmi les plus recherchés au monde. Rafraîchissant et exotique, ce fruit festif qui regorge de vitamines est très apprécié des touristes de passage à Madagascar en décembre.</p>      
-                    </div>
+              <div class="col-md-2 col-xs-12 btx">
+                <button class="btn btn-success" style="bottom:0;position: absolute;" onclick="getvalues(document.getElementById('sel2').value,document.getElementById('sel1').value)"><i class="fas fa-search"></i> Search</button>
+              </div>
+          </div>
+          <div class="notification col-md-3">
+            <h6 class="text-success">Actualités  <i class="far fa-bell"></i></h6>
+                  <div class="ovf">
+                        <div class="media p-1">
+                          <img src="src/img/vanille.png" alt="John Doe" class="rounded-circle" style="width:60px;">
+                            <div class="media-body">
+                              <h6>Vanille <br><small><i>Exportation de vanille </i></small></h6>
+                              <p>Madagascar exporte principalement la vanille vers les Etats-Unis, la France, le Canada, les Pays-Bas, l'Allemagne et la Suisse. Si la saison dernière nous avons exporté 2350 tonnes, cette année elle s'annonce également prometteuse en termes de quantité et de qualité.</p>      
+                            </div>
+                        </div>
+                        <div class="media  p-1">
+                          <img src="src/img/fruits33_letchis.jpg" alt="John Doe" class=" rounded-circle" style="width:60px;">
+                          <div class="media-body">
+                              <h6>Letchis <small><i>Saison en approche</i></small></h6>
+                              <p>Fruit star des fêtes de noël et de fin d’année en Europe, le litchi de Madagascar figure parmi les plus recherchés au monde. Rafraîchissant et exotique, ce fruit festif qui regorge de vitamines est très apprécié des touristes de passage à Madagascar en décembre.</p>      
+                          </div>
+                        </div>
                   </div>
-                  
-                  </div>
-
-                </div>
-       </div>
+              </div>
+          </div>
    </div>
    <div id="geer"></div>
 </body>

@@ -52,6 +52,16 @@ li{
   ::-webkit-scrollbar-track {
     border-radius: 8px;
   }
+.marg{
+    margin: 0 !important;
+    height: 50vh;
+    width: 70vh;
+    pointer-events: none;
+    z-index: -10;
+    background-color: #ade8c4;
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+    position: absolute;
+}
 
 /*   @keyframes backchange{
     0%{
@@ -80,8 +90,27 @@ body{
   /*   background: rgb(63,251,231);
     background: radial-gradient(circle, rgba(63,251,231,1) 0%, rgba(70,252,150,1) 100%); */
     overflow-x: hidden;
-}
 
+}
+.logo{
+    width: 120px;
+    height: 28px;
+}
+.nav{
+    box-shadow: -1px 5px 35px -9px rgba(0,0,0,0.42);
+}
+.nav-under:hover::after{
+    width: 100%;
+    transition: width .3s
+}
+.nav-under::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    transition: width .3s;
+ }
 
 .colonne1{
     background-color: rgb(29, 29, 29) !important;
