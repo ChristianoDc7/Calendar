@@ -2,6 +2,7 @@ const postlist = document.querySelector('.post-list')
 const formpost = document.querySelector('.add-form-post')
 const nom = document.getElementById('name-value')
 const mail = document.getElementById('email-value')
+const num = document.getElementById('num-value')
 const message = document.getElementById('body-value')
 
 const url = 'http://localhost:1337/forums'
@@ -17,11 +18,10 @@ const renderpost = (posts)=>{
                        ${post.Nom}
                     </h5>
                     <h6 class="card-text mb-2 text-muted">${post.Email}</h6>
+                    <h7 class="card-text mb-2 text-muted">${post.tel}</h7>
                     <p class="card-text">
                         ${post.Message}
                     </p>
-                    <a href="#" class="card-link">Edit</a>
-                    <a href="#" class="card-link">Delete</a>
                 </div>
             </div>
         `;
@@ -46,7 +46,8 @@ formpost.addEventListener('submit', (e)=>{
         body : JSON.stringify({
             Nom : nom.value,
             Message : message.value,
-            Email : mail.value
+            Email : mail.value,
+            tel : num.value
         })
     })
     .then(res=>res.json())

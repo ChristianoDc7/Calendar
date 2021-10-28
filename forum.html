@@ -20,23 +20,23 @@
     <nav class="navbar navbar-expand-md bg-success shadow-lg fixed-top px-2 pt-0">
         <div><img src="src/img/logoET.png" class="logo" alt=""></div>
         <li>
-          <a href="index.html" class="nav-link nav-under">Calendrier</a>
+          <a href="index.html" class="nav-link nav-under" id="navc">Calendrier</a>
         </li>
         <li>
-          <a href="perspectives.html" class="nav-link nav-under">Perspectives climatiques</a>
+          <a href="perspectives.html" class="nav-link nav-under" id="pers">Perspectives climatiques</a>
         </li>
         <li>
-          <a href="forum.html" class="nav-link nav-under">Forum</a>
+          <a href="forum.html" class="nav-link nav-under" id="forum">Forum</a>
         </li>
          <ul>
           <li class="nav-item dropdown pt-2">
               <a class="nav-link nav-under" href="#" id="navbardrop" data-toggle="dropdown">
-                <i class="fas fa-flag"></i> Language <i class="fas fa-caret-down"></i>
+                <i class="fas fa-flag"></i>  <span id="fiteny"> Language </span> <i class="fas fa-caret-down"></i>
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Français</a>
-                <a class="dropdown-item" href="#">Malagasy</a>
-                <a class="dropdown-item" href="#">English</a>
+                <a class="dropdown-item" onclick="changeLanguage('fr')">Français</a>
+                <a class="dropdown-item" onclick="changeLanguage('mlg')">Malagasy</a>
+                <a class="dropdown-item" onclick="changeLanguage('en')">English</a>
               </div>
             </li>
          </ul>
@@ -44,7 +44,7 @@
       </nav>
     <div class="container mt-5">
         <div class="row mt-3">
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <h1 class="headless text-success">Forum de partage</h1>
                 <form action="" class="add-form-post">
                     <div class="marg"></div>
@@ -54,11 +54,19 @@
                         </label>
                         <input type="text" class="form-control" name="" id="name-value" required>
                     </div>
-                    <div class="form-group">
-                        <label for="title">
-                            Email
-                        </label>
-                        <input type="email" class="form-control" name="" id="email-value">
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label for="title">
+                                Email
+                            </label>
+                            <input type="email" class="form-control" name="" id="email-value">
+                         </div>
+                         <div class="col-md-6">
+                            <label for="title">
+                                Num
+                            </label>
+                            <input type="text" class="form-control" name="" id="num-value">
+                         </div>
                     </div>
                     <div class="form-group">
                         <label for="body">Message</label>
@@ -75,4 +83,84 @@
             </div>
     </div>
 </body>
+<script>
+    // Create a function to change
+    // the hash value of the page
+    function changeLanguage(lang) {
+      location.hash = lang;
+      location.reload();
+    }
+  
+    // Define the language reload anchors
+    var language = {
+      en: {
+        calendrier: "Agricultural Calendar",
+        pers : "Weather Perspective",
+        navc : "Calendar",
+        forum: "Forum",
+        fiteny : 'Language',
+        vaovao : "NewsFeed"
+      },
+      fr: {
+        calendrier: "Calendrier culturel",
+        pers : "Perspective climatique",
+        navc: 'Calendrier',
+        forum : 'Discussion',
+        fiteny : 'Language',
+        vaovao:  "Actualités"
+      },
+      mlg: {
+        calendrier: "Tetiandro fambolena",
+        pers : "Vinavina Toetrandro",
+        navc : "Tetiandro",
+        forum: "Tafatafa",
+        fiteny : "Fiteny"
+  
+      }
+    };
+  
+    // Check if a hash value exists in the URL
+    if (window.location.hash) {
+  
+      // Set the content of the webpage 
+      // depending on the hash value
+      if (window.location.hash == "#mlg") {
+
+          document.getElementById('pers').textContent =
+          language.mlg.pers;
+          document.getElementById('navc').textContent =
+          language.mlg.navc;
+          document.getElementById('forum').textContent =
+          language.mlg.forum;
+          document.getElementById('fiteny').textContent =
+          language.mlg.fiteny;
+
+  
+      }
+      else if (window.location.hash == "#en") {
+ 
+        document.getElementById('pers').textContent =
+          language.en.pers;
+
+          document.getElementById('navc').textContent =
+          language.en.navc;
+          document.getElementById('forum').textContent =
+          language.en.forum;
+          document.getElementById('fiteny').textContent =
+          language.en.fiteny;
+
+      }
+      else if (window.location.hash == "#fr"){
+
+        document.getElementById('pers').textContent =
+          language.fr.pers;
+          document.getElementById('navc').textContent =
+          language.fr.navc;
+          document.getElementById('forum').textContent =
+          language.fr.forum;
+          document.getElementById('fiteny').textContent =
+          language.fr.fiteny
+      }
+    }
+  </script>
 </html>
