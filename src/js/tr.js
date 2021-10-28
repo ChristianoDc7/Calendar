@@ -1,4 +1,4 @@
-const url = 'src/database/data1.json';
+const url = 'http://localhost:1337/donnees';
 
 function showtable(){
     document.getElementById('cnv').style.display="none"
