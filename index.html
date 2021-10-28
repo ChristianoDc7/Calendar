@@ -35,9 +35,9 @@
             <i class="fas fa-flag"></i> Language <i class="fas fa-caret-down"></i>
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Français</a>
-            <a class="dropdown-item" href="#">Malagasy</a>
-            <a class="dropdown-item" href="#">English</a>
+            <a class="dropdown-item" onclick="changeLanguage('fruit')">Français</a>
+            <a class="dropdown-item" onclick="changeLanguage('mlg')">Malagasy</a>
+            <a class="dropdown-item" onclick="changeLanguage('en')">English</a>
           </div>
         </li>
      </ul>
@@ -92,4 +92,46 @@
    </div>
    <div id="geer"></div>
 </body>
+<script>
+  // Create a function to change
+  // the hash value of the page
+  function changeLanguage(lang) {
+    location.hash = lang;
+    location.reload();
+  }
+
+  // Define the language reload anchors
+  var language = {
+    en: {
+      welcome: "Welcome to the GeeksforGeeks " +
+      "Portal! You can choose any language " + 
+      "using the buttons above!"
+    },
+    fr: {
+      welcome: "Bienvenue sur les GeeksforGeeks " +
+      " Portail! Vous pouvez choisir n’importe quelle langue " + 
+      " en utilisant les boutons ci-dessus"
+    },
+    mlg: {
+      welcome: "GeeksforGeeks पोर्टल पर आपका स्वागत है! " +
+      "आप ऊपर दिए गए बटन का उपयोग करके किसी भी " + 
+      "भाषा को चुन सकते हैं!"
+    }
+  };
+
+  // Check if a hash value exists in the URL
+  if (window.location.hash) {
+
+    // Set the content of the webpage 
+    // depending on the hash value
+    if (window.location.hash == "#mlg") {
+      siteContent.textContent =
+        language.mlg.welcome;
+    }
+    else if (window.location.hash == "#en") {
+      siteContent.textContent =
+        language.en.welcome;
+    }
+  }
+</script>
 </html>
