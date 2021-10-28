@@ -1,3 +1,5 @@
+const url = 'http://localhost:1337/donnees';
+
 function showtable(){
     document.getElementById('cnv').style.display="none"
     document.getElementById('liste').style.display="block"
@@ -11,25 +13,25 @@ function showgraph(){
 function getvalues(volana,faritra){
     if(volana=="Full" && faritra=="Fuls"){
         document.getElementById('myChart').innerHTML=""
-        fetch('http://localhost:1337/donnees')
+        fetch(url)
         .then((response) =>response.json())
         .then((text)=>text.sort(sortout))
         .then((data) => generatALL(data))
 
     }else if(faritra=="Fuls" && volana!="Full"){
-        fetch('http://localhost:1337/donnees')
+        fetch(url)
         .then((response) =>response.json())
         .then((data)=>data.filter(mois=>mois.volana.NOM.includes(volana)))
         .then((data)=>genereg(data))
     
     }else if(faritra!="Fuls" && volana=="Full"){
-        fetch('http://localhost:1337/donnees')
+        fetch(url)
         .then((response) =>response.json())
         .then((data)=>data.filter(region=>region.faritany.NOM.includes(faritra)))
         .then((data) => genemoi(data))
     }else{
         document.getElementById('myChart').innerHTML=""
-        fetch('http://localhost:1337/donnees')
+        fetch(url)
         .then((response) =>response.json())
         .then((data)=>data.filter(mois=>mois.volana.NOM.includes(volana) && mois.faritany.NOM.includes(faritra)))
         .then((data) => gene2(data))
