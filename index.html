@@ -18,7 +18,8 @@
     <title>Agri Weather</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-md bg-success shadow-lg fixed-top px-5">
+  <div>
+    <nav class="navbar navbar-expand-md bg-success shadow-lg fixed-top px-5">
     <div><h4><i class="fas fa-cloud-sun-rain"></i>Agri-weather</h4></div>
     <li>
       <a href="index.html" class="nav-link">Calendrier</a>
@@ -26,18 +27,15 @@
     <li>
       <a href="perspectives.html" class="nav-link">Perspectives climatiques</a>
     </li>
-    <li>
-      <a href="forum.html" class="nav-link">Forum</a>
-    </li>
      <ul>
       <li class="nav-item dropdown pt-2">
           <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
             <i class="fas fa-flag"></i> Languages
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Français</a>
-            <a class="dropdown-item" href="#">Malagasy</a>
-            <a class="dropdown-item" href="#">English</a>
+            <a class="dropdown-item" onclick="changeLanguage('fruit')">Français</a>
+            <a class="dropdown-item" onclick="changeLanguage('mlg')">Malagasy</a>
+            <a class="dropdown-item" onclick="changeLanguage('en')">English</a>
           </div>
         </li>
 
@@ -45,53 +43,96 @@
    
   </nav>
    <div class="container m-5">
-       <div class="row pt-5">
-            <div class="row text-success" style="position:relative">
-              <div class="form-group col">
-                <label for="sel2">Misafidiana Faritra </label>
-                <select name="culture" id="sel1" class="form-control"  >
-                  <option value="none" selected> *aucun </option>
-                  <option value="Alaotra"> Alaotra </option>
-                  <option value="Analanjirofo"> Analanjirofo </option>
-                  <option value="Atsimo  Andrefana"> Atsimo  Andrefana </option>
-                </select>
-  
-              </div>
-            <div class="form-group col">
-              <label for="sel2">Misafidiana Fambolena: </label>
-              <select name="culture" id="sel2" class="form-control"  >
-                <option value="none" selected> *aucun </option>
-                <option value="mais"> Katsaka </option>
-                <option value="Riz"> Vary </option>
-              </select>
+     <div class="row pt-5">
+        <div class="row text-success" style="position:relative">
+          <div class="form-group col">
+            <label for="sel2">Misafidiana Faritra </label>
+            <select name="culture" id="sel1" class="form-control"  >
+              <option value="none" selected> *aucun </option>
+              <option value="Alaotra"> Alaotra </option>
+              <option value="Analanjirofo"> Analanjirofo </option>
+              <option value="Atsimo  Andrefana"> Atsimo  Andrefana </option>
+            </select>
 
-            </div>
-            <div class="col btx">
-              <button class="btn btn-success" style="bottom:72%;position: absolute;" onclick="getvalues(document.getElementById('sel2').value,document.getElementById('sel1').value)"><i class="fas fa-search"></i> Search</button>
-            </div>
-            <div class="notification col">
-              <h6>Notifications  <i class="far fa-bell"></i></h6>
-              <div class="ovf">
-                  <div class="media p-1">
-                      <img src="src/img/vanille.png" alt="John Doe" class="rounded-circle" style="width:60px;">
-                      <div class="media-body">
-                        <h6>Vanille <br><small><i>Exportation de vanille </i></small></h6>
-                        <p>Madagascar exporte principalement la vanille vers les Etats-Unis, la France, le Canada, les Pays-Bas, l'Allemagne et la Suisse. Si la saison dernière nous avons exporté 2350 tonnes, cette année elle s'annonce également prometteuse en termes de quantité et de qualité.</p>      
-                      </div>
-                    </div>
-                  <div class="media  p-1">
-                    <img src="src/img/fruits33_letchis.jpg" alt="John Doe" class=" rounded-circle" style="width:60px;">
-                    <div class="media-body">
-                      <h6>Letchis <small><i>Saison en approche</i></small></h6>
-                      <p>Fruit star des fêtes de noël et de fin d’année en Europe, le litchi de Madagascar figure parmi les plus recherchés au monde. Rafraîchissant et exotique, ce fruit festif qui regorge de vitamines est très apprécié des touristes de passage à Madagascar en décembre.</p>      
-                    </div>
-                  </div>
-                  
-                  </div>
+          </div>
+        <div class="form-group col">
+          <label for="sel2">Misafidiana Fambolena: </label>
+          <select name="culture" id="sel2" class="form-control"  >
+            <option value="none" selected> *aucun </option>
+            <option value="mais"> Katsaka </option>
+            <option value="Riz"> Vary </option>
+          </select>
 
+        </div>
+        <div class="col btx">
+          <button class="btn btn-success" style="bottom:72%;position: absolute;" onclick="getvalues(document.getElementById('sel2').value,document.getElementById('sel1').value)"><i class="fas fa-search"></i> Search</button>
+        </div>
+        <div class="notification col">
+          <h6>Notifications  <i class="far fa-bell"></i></h6>
+          <div class="ovf">
+              <div class="media p-1">
+                  <img src="src/img/vanille.png" alt="John Doe" class="rounded-circle" style="width:60px;">
+                  <div class="media-body">
+                    <h6>Vanille <br><small><i>Exportation de vanille </i></small></h6>
+                    <p  id="siteContent">Madagascar exporte principalement la vanille vers les Etats-Unis, la France, le Canada, les Pays-Bas, l'Allemagne et la Suisse. Si la saison dernière nous avons exporté 2350 tonnes, cette année elle s'annonce également prometteuse en termes de quantité et de qualité.</p>      
+                  </div>
                 </div>
-       </div>
-   </div>
-   <div id="geer"></div>
+              <div class="media  p-1">
+                <img src="src/img/fruits33_letchis.jpg" alt="John Doe" class=" rounded-circle" style="width:60px;">
+                <div class="media-body">
+                  <h6>Letchis <small><i>Saison en approche</i></small></h6>
+                  <p>Fruit star des fêtes de noël et de fin d’année en Europe, le litchi de Madagascar figure parmi les plus recherchés au monde. Rafraîchissant et exotique, ce fruit festif qui regorge de vitamines est très apprécié des touristes de passage à Madagascar en décembre.</p>      
+                </div>
+              </div>
+              
+              </div>
+
+            </div>
+        </div>
+      </div>
+    <div id="geer"></div>
+  </div>
+  <script>
+    // Create a function to change
+    // the hash value of the page
+    function changeLanguage(lang) {
+      location.hash = lang;
+      location.reload();
+    }
+  
+    // Define the language reload anchors
+    var language = {
+      en: {
+        welcome: "Welcome to the GeeksforGeeks " +
+        "Portal! You can choose any language " + 
+        "using the buttons above!"
+      },
+      fr: {
+        welcome: "Bienvenue sur les GeeksforGeeks " +
+        " Portail! Vous pouvez choisir n’importe quelle langue " + 
+        " en utilisant les boutons ci-dessus"
+      },
+      mlg: {
+        welcome: "GeeksforGeeks पोर्टल पर आपका स्वागत है! " +
+        "आप ऊपर दिए गए बटन का उपयोग करके किसी भी " + 
+        "भाषा को चुन सकते हैं!"
+      }
+    };
+  
+    // Check if a hash value exists in the URL
+    if (window.location.hash) {
+  
+      // Set the content of the webpage 
+      // depending on the hash value
+      if (window.location.hash == "#mlg") {
+        siteContent.textContent =
+          language.mlg.welcome;
+      }
+      else if (window.location.hash == "#en") {
+        siteContent.textContent =
+          language.en.welcome;
+      }
+    }
+  </script>
 </body>
 </html>
