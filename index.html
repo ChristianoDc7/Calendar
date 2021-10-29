@@ -15,22 +15,23 @@
     <script src="src/js/popper.min.js" defer></script>
     <script src="src/js/script.js" defer></script>
     <script src="src/js/app.js" defer></script>
+    <script src="src/js/navbar.js" defer></script>
     <title>Agri Weather</title>
 </head>
 <body>
   <nav class="navbar navbar-expand-md bg-success shadow-lg fixed-top px-2 pt-0">
     <div><img src="src/img/logoET.png" class="logo" alt=""></div>
-    <li>
-      <a href="index.html" class="nav-link nav-under" id="navc">Calendrier</a>
-    </li>
-    <li>
-      <a href="perspectives.html" class="nav-link nav-under" id="pers">Perspectives climatiques</a>
-    </li>
-    <li>
-      <a href="forum.html" class="nav-link nav-under" id="forum">Forum</a>
-    </li>
-     <ul>
-      <li class="nav-item dropdown pt-2">
+    
+      <li>
+        <a href="index.html" class="nav-link nav-under" id="navc">Calendrier</a>
+      </li>
+      <li>
+        <a href="perspectives.html" class="nav-link nav-under" id="pers">Perspectives climatiques</a>
+      </li>
+      <li>
+        <a href="forum.html" class="nav-link nav-under" id="forum">Forum</a>
+      </li>
+      <li class="nav-item dropdown">
           <a class="nav-link nav-under" href="#" id="navbardrop" data-toggle="dropdown">
             <i class="fas fa-flag"></i>  <span id="fiteny"> Language </span> <i class="fas fa-caret-down"></i>
           </a>
@@ -40,8 +41,7 @@
             <a class="dropdown-item" onclick="changeLanguage('en')">English</a>
           </div>
         </li>
-     </ul>
-   
+     
   </nav>
    <div class="container mx-5 mt-4">
        <div class="row pt-3">
@@ -49,7 +49,7 @@
           <div class="row">
               <div class="row col-md-9 text-success" style="position:relative">
                   <div class="form-group col-12">
-                    <label for="sel2" id="misaF">Misafidiana Faritra </label>
+                    <label for="sel2" id="misaF">Veuillez choisir la région : </label>
                     <select name="culture" id="sel1" class="form-control"  >
                       <option value="none" selected> ---- </option>
                       <option value="Alaotra"> Alaotra </option>
@@ -58,15 +58,15 @@
                     </select>
                   </div>
               <div class="form-group col-12">
-                <label for="sel2" id="misaD">Misafidiana Fambolena: </label>
+                <label for="sel2" id="misaD">Veuillez choisir la type de culture : </label>
                 <select name="culture" id="sel2" class="form-control"  >
                   <option value="none" selected> ---- </option>
                   <option value="mais"> Katsaka </option>
                   <option value="Riz"> Vary </option>
                 </select>
               </div>
-              <div class="col-md-2 col-xs-12 btx">
-                <button class="btn btn-success" style="bottom:0;position: absolute;" onclick="getvalues(document.getElementById('sel2').value,document.getElementById('sel1').value)"><i class="fas fa-search"></i> Search</button>
+              <div class="col-md-2 col-xs-12">
+                <button class="btn btn-success btx" style="bottom:0;position: absolute;" onclick="getvalues(document.getElementById('sel2').value,document.getElementById('sel1').value)"><i class="fas fa-search"></i> Search</button>
               </div>
           </div>
           <div class="notification col-md-3">

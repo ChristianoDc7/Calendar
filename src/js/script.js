@@ -203,7 +203,7 @@ function getvalues(fambolena,faritra){
 }
 function generate(resp){
     const html = resp.map( element=>{
-        let tabs = `<table class="table table-striped mt-5" style=" text-align: center;margin-bottom: 10px" id="tableau">
+        let tabs = `<table class="table table-striped mt-5" style="overflow-x:auto; text-align: center;margin-bottom: 10px" id="tableau">
         <tr>
         <td colspan="2" class="colonne3">
             Region

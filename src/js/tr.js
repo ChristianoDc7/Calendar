@@ -107,7 +107,9 @@ function genereg(resp){
                     beginAtZero: true
                 }
             }
-        }
+            
+        },
+        responsive: true
     });
     document.getElementById('liste').innerHTML=tabls+html+"</table>"
 }

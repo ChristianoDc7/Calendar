@@ -90,7 +90,6 @@ body{
   /*   background: rgb(63,251,231);
     background: radial-gradient(circle, rgba(63,251,231,1) 0%, rgba(70,252,150,1) 100%); */
     overflow-x: hidden;
-
 }
 .logo{
     width: 120px;
@@ -140,8 +139,28 @@ table{
 .red{
     background-color: #ade8c4 !important;
 }
-@media screen and (max-width: 600px){
-  nav h6{
-      display: none
-  }
+
+@media screen and (max-width: 520px){
+ .navbar li{
+     display: none;}
+ .container{
+    margin-left: 5px !important;
+ }
+ .cxds{
+    padding-left: 20px !important;
+ }
+ .btx{
+     position: initial !important;
+     margin-top: 9px;
+ }
+ .notification {
+     margin-top: 20px;
+ }
+ .radioj{
+     margin-top: 10px;
+ }
+ .table{
+     transform: scale(0.41) translate(-74.5%,-75%);
+    
+ }
 }
