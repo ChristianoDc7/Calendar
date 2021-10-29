@@ -11,295 +11,341 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme_color" content="#198754">
     <script src="src/js/jquery.min.js" defer></script>
-    <script src="src/js/bootstrap.min.js" defer></script>
     <script src="src/js/popper.min.js" defer></script>
     <script src="src/js/script.js" defer></script>
     <script src="src/js/app.js" defer></script>
-    <script src="src/js/navbar.js" defer></script>
-    <title>Agri Weather</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="src/js/bootstrap.min.js" defer></script>
+    <link href="./src/css/caroussel.css" rel="stylesheet" >
+    <title>E-tantsaha</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-md bg-success shadow-lg fixed-top px-2 pt-0">
-    <div><img src="src/img/logoET.png" class="logo" alt=""></div>
-    
-      <li>
-        <a href="index.html" class="nav-link nav-under" id="navc">Calendrier</a>
-      </li>
-      <li>
-        <a href="perspectives.html" class="nav-link nav-under" id="pers">Perspectives climatiques</a>
-      </li>
-      <li>
-        <a href="forum.html" class="nav-link nav-under" id="forum">Forum</a>
-      </li>
-      <li class="nav-item dropdown">
-          <a class="nav-link nav-under" href="#" id="navbardrop" data-toggle="dropdown">
-            <i class="fas fa-flag"></i>  <span id="fiteny"> Language </span> <i class="fas fa-caret-down"></i>
-          </a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" onclick="changeLanguage('fr')">Français</a>
-            <a class="dropdown-item" onclick="changeLanguage('mlg')">Malagasy</a>
-            <a class="dropdown-item" onclick="changeLanguage('en')">English</a>
-          </div>
-        </li>
-     
-  </nav>
-   <div class="container mx-5 mt-4">
-       <div class="row pt-3">
-        <h1 class="headless text-success" id="calendrier">Calendrier culturel </h1>
-          <div class="row">
-              <div class="row col-md-9 text-success" style="position:relative">
-                  <div class="form-group col-12">
-                    <label for="sel2" id="misaF">Veuillez choisir la région : </label>
-                    <select name="culture" id="sel1" class="form-control"  >
-                      <option value="none" selected> ---- </option>
-                      <option value="Alaotra"> Alaotra </option>
-                      <option value="Analanjirofo"> Analanjirofo </option>
-                      <option value="Atsimo  Andrefana"> Atsimo  Andrefana </option>
-                    </select>
-                  </div>
-              <div class="form-group col-12">
-                <label for="sel2" id="misaD">Veuillez choisir la type de culture : </label>
-                <select name="culture" id="sel2" class="form-control"  >
-                  <option value="none" selected> ---- </option>
-                  <option value="mais"> Katsaka </option>
-                  <option value="Riz"> Vary </option>
-                </select>
-              </div>
-              <div class="col-md-2 col-xs-12">
-                <button class="btn btn-success btx" style="bottom:0;position: absolute;" onclick="getvalues(document.getElementById('sel2').value,document.getElementById('sel1').value)"><i class="fas fa-search"></i> Search</button>
-              </div>
-          </div>
-          <div class="notification col-md-3">
-            <h6 class="text-success" ><span id="vaovao">Actualités </span>   <i class="far fa-bell"></i></h6>
-                  <div class="ovf">
-                        <div class="media p-1">
-                          <img src="src/img/vanille.png" alt="John Doe" class="rounded-circle" style="width:60px;">
-                            <div class="media-body">
-                              <h6>Vanille <br><small><i>Exportation de vanille </i></small></h6>
-                              <p>Madagascar exporte principalement la vanille vers les Etats-Unis, la France, le Canada, les Pays-Bas, l'Allemagne et la Suisse. Si la saison dernière nous avons exporté 2350 tonnes, cette année elle s'annonce également prometteuse en termes de quantité et de qualité.</p>      
+    <nav class="navbar navbar-expand-md bg-success shadow-lg fixed-top px-2 ">
+        <div><img src="src/img/logoET.png" class="logo" alt=""></div>
+        <ul id="navss" class="mt-3">
+            <li>
+                <a href="index.html" class="nav-link nav-under" id="pers">Home </a>
+              </li>
+            <li>
+              <a href="calendar.html" class="nav-link nav-under" id="navc">Calendrier</a>
+            </li>
+            <li>
+              <a href="perspectives.html" class="nav-link nav-under" id="pers">Perspectives climatiques</a>
+            </li>
+            <li>
+              <a href="forum.html" class="nav-link nav-under" id="forum">Forum</a>
+            </li>
+        
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-under" href="#" id="navbardrop" data-toggle="dropdown">
+              <i class="fas fa-flag"></i>  <span id="fiteny"> Language </span> <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" onclick="changeLanguage('fr')">Français</a>
+              <a class="dropdown-item" onclick="changeLanguage('mlg')">Malagasy</a>
+              <a class="dropdown-item" onclick="changeLanguage('en')">English</a>
+            </div>
+          </li>
+        </ul>
+       
+      </nav>
+<div class="container m-5">
+    <div class="row">
+        <div class="col-sm" style="display: flex; justify-content: center">
+            <img width="700"  src="/src/img/IMAGE/1.png" alt="">
+        </div>
+        <div class="col-sm d-flex flex-column align-items-end" style="display: flex; justify-content: center;">
+            <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size: 40px;letter-spacing: -2px;line-height: 30px;text-align: left; line-height: 35px;">
+                <b>
+                    Votre partenaire <br>
+                    en agriculture
+                </b>
+            </p>
+            <div class="mt-3" style="text-align: left; padding-right: 55px;" >
+                <p>
+                    C'est une application conçue pour <br>
+                     faciliter le travail des agriculteurs <br>
+                    et des vulgarisateurs.        
+                </p>
+            </div>
+        </div>
+
+    <!---->
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade"  id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color: #f7f7f7;">
+                <div style="background-color: #9dbf00 ;width: 100%; color:#9dbf00 ;">.</div>
+                <div class="modal-header">
+                    <div>
+                        <h1 style="padding-top: 10px;"><center>Toro-hevitra momba ny fambolena vary</center></h1>
+                        <img src="/src/img/1.png" style="width: 150px; height: 150px ;margin-left: 170px;">
+                            <div class="row" style="padding: 20px;">  
+                                <div class="col-sm">
+                                    <h3><center>Fambolena vary an-tanety</center></h3> 
+                                    <p>Afaka atao manara-tady , afaka  atao saritaka</p> 
+                                    <p>
+                                        Toerana tsara ambolena: tany lemaka, iva toerana , tany masaka.  Lazaina hoe "Baiboho" teo amin'ny Malagasy
+                                    </p>
+                                    <p>
+                                        Voalohany indrindra aloha dia asaina ny tany eo ny volana jolay; averina asaina indray rehefa hamboly : volana novambra. 
+                                    </p>
+                                    <p>
+                                        Potehina ny bainga , atao ny lakan-drano , hafafy ny zezika (zezik'omby na zezika kisoa), fahitra kosa raha manta ny tany raha ilaina izany.
+                                    </p>
+                                    <p>
+                                        Homanina ny masimboly, 4 katramin'ny 7 ny tsara arotsaka isaky ny lavaka. 
+                                    </p>
+                                    <p>
+                                        Miava in-telo: 
+                                    </p>
+                                    <ul>
+                                        <li> 
+                                            Voalohany, 15 => 25 andro
+                                        </li>
+                                        <li>
+                                            Faharoa, 40 => 60 andro
+                                        </li>
+                                        <li>
+                                            Fahatelo, manongotra ahitra manomboka eo amin'ny 60 andro.
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        Fitaovana entina miava vary: "Charculeuse" raha vary manara-tady no nosafidiana natao ary "angady" kosa raha saritaka.
+                                    </p>
+                                    <p>
+                                        Miandry ny fahamasahany ho mavo matoy tsara
+                                    </p>
+                                    <p>
+                                        Ary farany dia jinjaina ilay vary, ahazina mba tsy ho simba, kororohina mba hadio 
+                                    </p>
+                                    <p>
+                                        <h4>NB:</h4>
+                                        * Ny zezika dia afaka hafafy eo anelanelan'ny asa voalohany sy faharoa , na alohan'ny hamboly, na alohan'ny fiavana voalohany. <br>
+                                        * Misy 3 volana sy 5 volana ny vary an-tanety.
+                                    
+                                    </p>
+                                </div>
+                                <div class="col-sm">
+                                    <h3><center>Fambolena vary an-tanimbary</center></h3>
+                                    <p>
+                                        Misy fotoam-pambolena in-droa eto amin'ny eto amin'ny faritra afivoan-tany dia amin'ny:
+                                        <ul>
+                                            <li>
+                                                Volana jona ny fotoana fanetsana
+                                            </li>
+                                            <li>
+                                                Volana oktobra ny fotoana fanetsana manaraka
+                                            </li>
+                                        </ul>
+                                    </p>
+                                    <p>
+                                        Ny karazam-bary dia maro ka 100 andro makany ny vokatra.
+                                    </p>
+                                    <p>
+                                        Ny fikarakarana dia mitovy hatrany:
+                                    </p>
+                                    <p>
+                                        Asaina ny taniketsa <br>
+                                        Diovina ny tahala (sisin-taniketsa) <br>
+                                        Lomana rano , hosena(potehina) na mandemy  ny tany <br>
+                                        Haravona <br>
+                                        Asiana lakan-drano ny sisiny na hoe lalan'ny tsiboboika<br>
+                                        Hafafy ny masomboly efa voafantina raha ara-teknika: 1 kapoaka isaky ny 1 metatra tora-droa, raha ny mahazatra dia izay no vary mahafeno ny taniketsa. <br>
+                                        Andrasina ny fotoana mahalava izany ary afindra amin'ny tanimbary tokony hisy azy.
+                
+                                    </p>
+                                    <p>
+                                        Fikarakarana tanimbary 
+                                    </p>
+                                    <p>
+                                        Hasaina , ragiragiana, diovina ny tahala, alefa ny rano, averina asa faharoa, ragiragiana ho halemy tsara, haravona mba hitovy tantana, manetsa (sady: ketsa manara-tady na ketsa saritaka),
+                                        miava in-3 ka atao tanana raha saritaka fa raha manara-tady kosa dia ny in-2 afaka atao amin'ny "Charculeuse" ary ny fahatelo dia atao tanana, manetsa , mijinja.
+                                    </p>
+                                    <p>
+                                        <h5>
+                                            Tsara raha misy rano foana ny tanimbary
+                                        </h5>
+                                    </p>
+                                </div>
+                            </div> 
+                            <img src="/src/img/19.png" style="width: 100px; height: 100px; float: right;">
+                        </div> -->                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+    <div class="row mt-5" style="width: 116%;display: flex; justify-content: center; padding-left: 80px;">
+            <div class="row">
+                <div class="MultiCarousel"  data-slide="1" id="MultiCarousel"  data-interval="1000"> 
+                    <div class="MultiCarousel-inner" style="size: 50px;">
+                        <div class="item" style="margin-right: 30px;">
+                            <div class="pad15" style="background-color: white;">
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="/src/img/IMAGE/vary.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Riz</h5>
+                                        <button data-toggle="modal" data-target="#exampleModal" class="btn btn-success">details</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="media  p-1">
-                          <img src="src/img/fruits33_letchis.jpg" alt="John Doe" class=" rounded-circle" style="width:60px;">
-                          <div class="media-body">
-                              <h6>Letchis <small><i>Saison en approche</i></small></h6>
-                              <p>Fruit star des fêtes de noël et de fin d’année en Europe, le litchi de Madagascar figure parmi les plus recherchés au monde. Rafraîchissant et exotique, ce fruit festif qui regorge de vitamines est très apprécié des touristes de passage à Madagascar en décembre.</p>      
-                          </div>
+                        <div class="item" style="margin-right: 30px;">
+                            <div class="pad15" style="background-color: white;">
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="/src/img/IMAGE/katsaka.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Maîs</h5>
+                                        <button data-toggle="modal" data-target="#exampleModal" class="btn btn-success">details</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                  </div>
-              </div>
-          </div>
-   </div>
-   <div id="geer"></div>
+                        <div class="item" style="margin-right: 30px;">
+                            <div class="pad15" style="background-color: white;">
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="/src/img/IMAGE/votaby.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Tomate</h5>
+                                        <button data-toggle="modal" data-target="#exampleModal" class="btn btn-success">details</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item" style="margin-right: 30px;">
+                            <div class="pad15" style="background-color: white;">
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="/src/img/IMAGE/mangazo.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Manioc</h5>
+                                        <button data-toggle="modal" data-target="#exampleModal" class="btn btn-success">details</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<script>
+
+    $(document).ready(function () {
+        var itemsMainDiv = ('.MultiCarousel');
+        var itemsDiv = ('.MultiCarousel-inner');
+        var itemWidth = "";
+
+        $('.leftLst, .rightLst').click(function () {
+            var condition = $(this).hasClass("leftLst");
+            if (condition)
+                click(0, this);
+            else
+                click(1, this)
+        });
+
+        ResCarouselSize();
+
+
+
+
+        $(window).resize(function () {
+            ResCarouselSize();
+        });
+
+        //this function define the size of the items
+        function ResCarouselSize() {
+            var incno = 0;
+            var dataItems = ("data-items");
+            var itemClass = ('.item');
+            var id = 0;
+            var btnParentSb = '';
+            var itemsSplit = '';
+            var sampwidth = $(itemsMainDiv).width();
+            var bodyWidth = $('body').width();
+            $(itemsDiv).each(function () {
+                id = id + 1;
+                var itemNumbers = $(this).find(itemClass).length;
+                btnParentSb = $(this).parent().attr(dataItems);
+                itemsSplit = btnParentSb.split(',');
+                $(this).parent().attr("id", "MultiCarousel" + id);
+
+
+                if (bodyWidth >= 1200) {
+                    incno = itemsSplit[3];
+                    itemWidth = sampwidth / incno;
+                }
+                else if (bodyWidth >= 992) {
+                    incno = itemsSplit[2];
+                    itemWidth = sampwidth / incno;
+                }
+                else if (bodyWidth >= 768) {
+                    incno = itemsSplit[1];
+                    itemWidth = sampwidth / incno;
+                }
+                else {
+                    incno = itemsSplit[0];
+                    itemWidth = sampwidth / incno;
+                }
+                $(this).css({ 'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers });
+                $(this).find(itemClass).each(function () {
+                    $(this).outerWidth(itemWidth);
+                });
+
+                $(".leftLst").addClass("over");
+                $(".rightLst").removeClass("over");
+
+            });
+        }
+
+
+        //this function used to move the items
+        function ResCarousel(e, el, s) {
+            var leftBtn = ('.leftLst');
+            var rightBtn = ('.rightLst');
+            var translateXval = '';
+            var divStyle = $(el + ' ' + itemsDiv).css('transform');
+            var values = divStyle.match(/-?[\d\.]+/g);
+            var xds = Math.abs(values[4]);
+            if (e == 0) {
+                translateXval = parseInt(xds) - parseInt(itemWidth * s);
+                $(el + ' ' + rightBtn).removeClass("over");
+
+                if (translateXval <= itemWidth / 2) {
+                    translateXval = 0;
+                    $(el + ' ' + leftBtn).addClass("over");
+                }
+            }
+            else if (e == 1) {
+                var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
+                translateXval = parseInt(xds) + parseInt(itemWidth * s);
+                $(el + ' ' + leftBtn).removeClass("over");
+
+                if (translateXval >= itemsCondition - itemWidth / 2) {
+                    translateXval = itemsCondition;
+                    $(el + ' ' + rightBtn).addClass("over");
+                }
+            }
+            $(el + ' ' + itemsDiv).css('transform', 'translateX(' + -translateXval + 'px)');
+        }
+
+        //It is used to get some elements from btn
+        function click(ell, ee) {
+            var Parent = "#" + $(ee).parent().attr("id");
+            var slide = $(Parent).attr("data-slide");
+            ResCarousel(ell, Parent, slide);
+        }
+
+    });
+</script>
 </body>
-<script>
-  // Create a function to change
-  // the hash value of the page
-  function changeLanguage(lang) {
-    location.hash = lang;
-    location.reload();
-  }
-
-  // Define the language reload anchors
-  var language = {
-    en: {
-      calendrier: "Agricultural Calendar",
-      pers : "Weather Perspective",
-      misaF :"Choose Region",
-      misaD:"Choose a Farming",
-      navc : "Calendar",
-      forum: "Forum",
-      fiteny : 'Language',
-      vaovao : "NewsFeed"
-    },
-    fr: {
-      calendrier: "Calendrier culturel",
-      pers : "Perspective climatique",
-      misaF: "Choisissez un region",
-      misaD:'Choisissez un culture',
-      navc: 'Calendrier',
-      forum : 'Discussion',
-      fiteny : 'Language',
-      vaovao:  "Actualités"
-    },
-    mlg: {
-      calendrier: "Tetiandro fambolena",
-      pers : "Vinavina Toetrandro",
-      misaF: "Misafidiana faritra",
-      misaD: "Misafidiana Fambolena",
-      navc : "Tetiandro",
-      forum: "Tafatafa",
-      fiteny : "Fiteny",
-      vaovao: "Vaovao"
-
-    }
-  };
-
-  // Check if a hash value exists in the URL
-  if (window.location.hash) {
-
-    // Set the content of the webpage 
-    // depending on the hash value
-    if (window.location.hash == "#mlg") {
-      document.getElementById('calendrier').textContent =
-        language.mlg.calendrier;
-        document.getElementById('pers').textContent =
-        language.mlg.pers;
-        document.getElementById('misaF').textContent =
-        language.mlg.misaF;
-        document.getElementById('misaD').textContent =
-        language.mlg.misaD;
-        document.getElementById('navc').textContent =
-        language.mlg.navc;
-        document.getElementById('forum').textContent =
-        language.mlg.forum;
-        document.getElementById('fiteny').textContent =
-        language.mlg.fiteny;
-        document.getElementById('vaovao').textContent =
-        language.mlg.vaovao
-
-    }
-    else if (window.location.hash == "#en") {
-      document.getElementById('calendrier').textContent =
-        language.en.calendrier;
-      document.getElementById('pers').textContent =
-        language.en.pers;
-        document.getElementById('misaF').textContent =
-        language.en.misaF;
-        document.getElementById('misaD').textContent =
-        language.en.misaD;
-        document.getElementById('navc').textContent =
-        language.en.navc;
-        document.getElementById('forum').textContent =
-        language.en.forum;
-        document.getElementById('fiteny').textContent =
-        language.en.fiteny;
-        document.getElementById('vaovao').textContent =
-        language.en.vaovao
-    }
-    else if (window.location.hash == "#fr"){
-      document.getElementById('calendrier').textContent =
-        language.fr.calendrier;
-      document.getElementById('pers').textContent =
-        language.fr.pers;
-        document.getElementById('misaF').textContent =
-        language.fr.misaF;
-        document.getElementById('misaD').textContent =
-        language.fr.misaD;
-        document.getElementById('navc').textContent =
-        language.fr.navc;
-        document.getElementById('forum').textContent =
-        language.fr.forum;
-        document.getElementById('fiteny').textContent =
-        language.fr.fiteny
-        document.getElementById('vaovao').textContent =
-        language.fr.vaovao
-    }
-  }
-</script>
-<script>
-  // Create a function to change
-  // the hash value of the page
-  function changeLanguage(lang) {
-    location.hash = lang;
-    location.reload();
-  }
-
-  // Define the language reload anchors
-  var language = {
-    en: {
-      calendrier: "Agricultural Calendar",
-      pers : "Weather Perspective",
-      misaF :"Choose Region",
-      misaD:"Choose a Farming",
-      navc : "Calendar",
-      forum: "Forum",
-      fiteny : 'Language',
-      vaovao : "NewsFeed"
-    },
-    fr: {
-      calendrier: "Calendrier culturel",
-      pers : "Perspective climatique",
-      misaF: "Choisissez un region",
-      misaD:'Choisissez un culture',
-      navc: 'Calendrier',
-      forum : 'Discussion',
-      fiteny : 'Language',
-      vaovao:  "Actualités"
-    },
-    mlg: {
-      calendrier: "Tetiandro fambolena",
-      pers : "Vinavina Toetrandro",
-      misaF: "Misafidiana faritra",
-      misaD: "Misafidiana Fambolena",
-      navc : "Tetiandro",
-      forum: "Tafatafa",
-      fiteny : "Fiteny",
-      vaovao: "Vaovao"
-
-    }
-  };
-
-  // Check if a hash value exists in the URL
-  if (window.location.hash) {
-
-    // Set the content of the webpage 
-    // depending on the hash value
-    if (window.location.hash == "#mlg") {
-      document.getElementById('calendrier').textContent =
-        language.mlg.calendrier;
-        document.getElementById('pers').textContent =
-        language.mlg.pers;
-        document.getElementById('misaF').textContent =
-        language.mlg.misaF;
-        document.getElementById('misaD').textContent =
-        language.mlg.misaD;
-        document.getElementById('navc').textContent =
-        language.mlg.navc;
-        document.getElementById('forum').textContent =
-        language.mlg.forum;
-        document.getElementById('fiteny').textContent =
-        language.mlg.fiteny;
-        document.getElementById('vaovao').textContent =
-        language.mlg.vaovao
-
-    }
-    else if (window.location.hash == "#en") {
-      document.getElementById('calendrier').textContent =
-        language.en.calendrier;
-      document.getElementById('pers').textContent =
-        language.en.pers;
-        document.getElementById('misaF').textContent =
-        language.en.misaF;
-        document.getElementById('misaD').textContent =
-        language.en.misaD;
-        document.getElementById('navc').textContent =
-        language.en.navc;
-        document.getElementById('forum').textContent =
-        language.en.forum;
-        document.getElementById('fiteny').textContent =
-        language.en.fiteny;
-        document.getElementById('vaovao').textContent =
-        language.en.vaovao
-    }
-    else if (window.location.hash == "#fr"){
-      document.getElementById('calendrier').textContent =
-        language.fr.calendrier;
-      document.getElementById('pers').textContent =
-        language.fr.pers;
-        document.getElementById('misaF').textContent =
-        language.fr.misaF;
-        document.getElementById('misaD').textContent =
-        language.fr.misaD;
-        document.getElementById('navc').textContent =
-        language.fr.navc;
-        document.getElementById('forum').textContent =
-        language.fr.forum;
-        document.getElementById('fiteny').textContent =
-        language.fr.fiteny
-        document.getElementById('vaovao').textContent =
-        language.fr.vaovao
-    }
-  }
-</script>
 </html>

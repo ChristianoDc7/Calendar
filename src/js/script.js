@@ -2,6 +2,10 @@
 var tableau = document.querySelector('.table')
 var obj;
 
+
+
+
+
 function tablu(deb,fin){
     if(deb){
     let ddu = Number(deb.substr(-2,2))

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+    <link rel="icon" type="image/x-icon" href="src/img/icon/climate-icon-0.jpg">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme_color" content="#198754">
+    <script src="src/js/jquery.min.js" defer></script>
+    <script src="src/js/bootstrap.min.js" defer></script>
+    <script src="src/js/popper.min.js" defer></script>
+    <script src="src/js/script.js" defer></script>
+    <script src="src/js/app.js" defer></script>
+    <script src="src/js/navbar.js" defer></script>
+    <title>Calendar</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-md bg-success shadow-lg fixed-top px-2 ">
+    <div><img src="src/img/logoET.png" class="logo" alt=""></div>
+    <ul id="navss" class="mt-3">
+        <li>
+            <a href="index.html" class="nav-link nav-under" id="pers">Home </a>
+          </li>
+        <li>
+          <a href="calendar.html" class="nav-link nav-under" id="navc">Calendrier</a>
+        </li>
+        <li>
+          <a href="perspectives.html" class="nav-link nav-under" id="pers">Perspectives climatiques</a>
+        </li>
+        <li>
+          <a href="forum.html" class="nav-link nav-under" id="forum">Forum</a>
+        </li>
+    
+      <li class="nav-item dropdown">
+        <a class="nav-link nav-under" href="#" id="navbardrop" data-toggle="dropdown">
+          <i class="fas fa-flag"></i>  <span id="fiteny"> Language </span> <i class="fas fa-caret-down"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" onclick="changeLanguage('fr')">Français</a>
+          <a class="dropdown-item" onclick="changeLanguage('mlg')">Malagasy</a>
+          <a class="dropdown-item" onclick="changeLanguage('en')">English</a>
+        </div>
+      </li>
+    </ul>
+   
+  </nav>
+   <div class="container mx-5 mt-4">
+       <div class="row pt-3">
+        <h1 class="headless text-success" id="calendrier">Calendrier culturel </h1>
+          <div class="row">
+              <div class="row col-md-9 text-success" style="position:relative">
+                  <div class="form-group col-12">
+                    <label for="sel2" id="misaF">Veuillez choisir la région : </label>
+                    <select name="culture" id="sel1" class="form-control"  >
+                      <option value="none" selected> ---- </option>
+                      <option value="Alaotra"> Alaotra </option>
+                      <option value="Analanjirofo"> Analanjirofo </option>
+                      <option value="Atsimo  Andrefana"> Atsimo  Andrefana </option>
+                    </select>
+                  </div>
+              <div class="form-group col-12">
+                <label for="sel2" id="misaD">Veuillez choisir la type de culture : </label>
+                <select name="culture" id="sel2" class="form-control"  >
+                  <option value="none" selected> ---- </option>
+                  <option value="mais"> Katsaka </option>
+                  <option value="Riz"> Vary </option>
+                </select>
+              </div>
+              <div class="col-md-2 col-xs-12">
+                <button class="btn btn-success btx" style="bottom:0;position: absolute;" onclick="getvalues(document.getElementById('sel2').value,document.getElementById('sel1').value)"><i class="fas fa-search"></i> Search</button>
+              </div>
+          </div>
+          <div class="notification col-md-3">
+            <h6 class="text-success" ><span id="vaovao">Actualités </span>   <i class="far fa-bell"></i></h6>
+                  <div class="ovf">
+                        <div class="media p-1">
+                          <img src="src/img/vanille.png" alt="John Doe" class="rounded-circle" style="width:60px;">
+                            <div class="media-body">
+                              <h6>Vanille <br><small><i>Exportation de vanille </i></small></h6>
+                              <p>Madagascar exporte principalement la vanille vers les Etats-Unis, la France, le Canada, les Pays-Bas, l'Allemagne et la Suisse. Si la saison dernière nous avons exporté 2350 tonnes, cette année elle s'annonce également prometteuse en termes de quantité et de qualité.</p>      
+                            </div>
+                        </div>
+                        <div class="media  p-1">
+                          <img src="src/img/fruits33_letchis.jpg" alt="John Doe" class=" rounded-circle" style="width:60px;">
+                          <div class="media-body">
+                              <h6>Letchis <small><i>Saison en approche</i></small></h6>
+                              <p>Fruit star des fêtes de noël et de fin d’année en Europe, le litchi de Madagascar figure parmi les plus recherchés au monde. Rafraîchissant et exotique, ce fruit festif qui regorge de vitamines est très apprécié des touristes de passage à Madagascar en décembre.</p>      
+                          </div>
+                        </div>
+                  </div>
+              </div>
+          </div>
+   </div>
+   <div id="geer"></div>
+</body>
+<script>
+  // Create a function to change
+  // the hash value of the page
+  function changeLanguage(lang) {
+    location.hash = lang;
+    location.reload();
+  }
+
+  // Define the language reload anchors
+  var language = {
+    en: {
+      calendrier: "Agricultural Calendar",
+      pers : "Weather Perspective",
+      misaF :"Choose Region",
+      misaD:"Choose a Farming",
+      navc : "Calendar",
+      forum: "Forum",
+      fiteny : 'Language',
+      vaovao : "NewsFeed"
+    },
+    fr: {
+      calendrier: "Calendrier culturel",
+      pers : "Perspective climatique",
+      misaF: "Choisissez un region",
+      misaD:'Choisissez un culture',
+      navc: 'Calendrier',
+      forum : 'Discussion',
+      fiteny : 'Language',
+      vaovao:  "Actualités",
+      
+    },
+    mlg: {
+      calendrier: "Tetiandro fambolena",
+      pers : "Vinavina Toetrandro",
+      misaF: "Misafidiana faritra",
+      misaD: "Misafidiana Fambolena",
+      navc : "Tetiandro",
+      forum: "Tafatafa",
+      fiteny : "Fiteny",
+      vaovao: "Vaovao",
+      homs: "Tongasoa"
+
+    }
+  };
+
+  // Check if a hash value exists in the URL
+  if (window.location.hash) {
+
+    // Set the content of the webpage 
+    // depending on the hash value
+    if (window.location.hash == "#mlg") {
+      document.getElementById('calendrier').textContent =
+        language.mlg.calendrier;
+        document.getElementById('pers').textContent =
+        language.mlg.pers;
+        document.getElementById('misaF').textContent =
+        language.mlg.misaF;
+        document.getElementById('misaD').textContent =
+        language.mlg.misaD;
+        document.getElementById('navc').textContent =
+        language.mlg.navc;
+        document.getElementById('forum').textContent =
+        language.mlg.forum;
+        document.getElementById('fiteny').textContent =
+        language.mlg.fiteny;
+        document.getElementById('vaovao').textContent =
+        language.mlg.vaovao
+        document.getElementById('homs').textContent =
+        language.en.homs;
+
+    }
+    else if (window.location.hash == "#en") {
+      document.getElementById('calendrier').textContent =
+        language.en.calendrier;
+      document.getElementById('pers').textContent =
+        language.en.pers;
+        document.getElementById('misaF').textContent =
+        language.en.misaF;
+        document.getElementById('misaD').textContent =
+        language.en.misaD;
+        document.getElementById('navc').textContent =
+        language.en.navc;
+        document.getElementById('forum').textContent =
+        language.en.forum;
+        document.getElementById('fiteny').textContent =
+        language.en.fiteny;
+        document.getElementById('vaovao').textContent =
+        language.en.vaovao
+        document.getElementById('homs').textContent =
+        language.en.homs;
+    }
+    else if (window.location.hash == "#fr"){
+      document.getElementById('calendrier').textContent =
+        language.fr.calendrier;
+      document.getElementById('pers').textContent =
+        language.fr.pers;
+        document.getElementById('misaF').textContent =
+        language.fr.misaF;
+        document.getElementById('misaD').textContent =
+        language.fr.misaD;
+        document.getElementById('navc').textContent =
+        language.fr.navc;
+        document.getElementById('forum').textContent =
+        language.fr.forum;
+        document.getElementById('fiteny').textContent =
+        language.fr.fiteny
+        document.getElementById('vaovao').textContent =
+        language.fr.vaovao
+        document.getElementById('homs').textContent =
+        language.fr.homs;
+    }
+  }
+</script>
+<script>
+  // Create a function to change
+  // the hash value of the page
+  function changeLanguage(lang) {
+    location.hash = lang;
+    location.reload();
+  }
+
+  // Define the language reload anchors
+  var language = {
+    en: {
+      calendrier: "Agricultural Calendar",
+      pers : "Weather Perspective",
+      misaF :"Choose Region",
+      misaD:"Choose a Farming",
+      navc : "Calendar",
+      forum: "Forum",
+      fiteny : 'Language',
+      vaovao : "NewsFeed"
+    },
+    fr: {
+      calendrier: "Calendrier culturel",
+      pers : "Perspective climatique",
+      misaF: "Choisissez un region",
+      misaD:'Choisissez un culture',
+      navc: 'Calendrier',
+      forum : 'Discussion',
+      fiteny : 'Language',
+      vaovao:  "Actualités"
+    },
+    mlg: {
+      calendrier: "Tetiandro fambolena",
+      pers : "Vinavina Toetrandro",
+      misaF: "Misafidiana faritra",
+      misaD: "Misafidiana Fambolena",
+      navc : "Tetiandro",
+      forum: "Tafatafa",
+      fiteny : "Fiteny",
+      vaovao: "Vaovao"
+
+    }
+  };
+
+  // Check if a hash value exists in the URL
+  if (window.location.hash) {
+
+    // Set the content of the webpage 
+    // depending on the hash value
+    if (window.location.hash == "#mlg") {
+      document.getElementById('calendrier').textContent =
+        language.mlg.calendrier;
+        document.getElementById('pers').textContent =
+        language.mlg.pers;
+        document.getElementById('misaF').textContent =
+        language.mlg.misaF;
+        document.getElementById('misaD').textContent =
+        language.mlg.misaD;
+        document.getElementById('navc').textContent =
+        language.mlg.navc;
+        document.getElementById('forum').textContent =
+        language.mlg.forum;
+        document.getElementById('fiteny').textContent =
+        language.mlg.fiteny;
+        document.getElementById('vaovao').textContent =
+        language.mlg.vaovao
+
+    }
+    else if (window.location.hash == "#en") {
+      document.getElementById('calendrier').textContent =
+        language.en.calendrier;
+      document.getElementById('pers').textContent =
+        language.en.pers;
+        document.getElementById('misaF').textContent =
+        language.en.misaF;
+        document.getElementById('misaD').textContent =
+        language.en.misaD;
+        document.getElementById('navc').textContent =
+        language.en.navc;
+        document.getElementById('forum').textContent =
+        language.en.forum;
+        document.getElementById('fiteny').textContent =
+        language.en.fiteny;
+        document.getElementById('vaovao').textContent =
+        language.en.vaovao
+    }
+    else if (window.location.hash == "#fr"){
+      document.getElementById('calendrier').textContent =
+        language.fr.calendrier;
+      document.getElementById('pers').textContent =
+        language.fr.pers;
+        document.getElementById('misaF').textContent =
+        language.fr.misaF;
+        document.getElementById('misaD').textContent =
+        language.fr.misaD;
+        document.getElementById('navc').textContent =
+        language.fr.navc;
+        document.getElementById('forum').textContent =
+        language.fr.forum;
+        document.getElementById('fiteny').textContent =
+        language.fr.fiteny
+        document.getElementById('vaovao').textContent =
+        language.fr.vaovao
+    }
+  }
+</script>
+</html>

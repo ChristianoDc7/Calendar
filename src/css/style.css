@@ -6,6 +6,10 @@ li{
     font-family: 'Architects Daughter', cursive;
 
 }
+nav ul{
+    display: inline-flex;
+
+}
 .navbar{
     color: white;
     justify-content: space-between !important;
@@ -141,7 +145,7 @@ table{
 }
 
 @media screen and (max-width: 520px){
- .navbar li{
+ .navbar ul{
      display: none;}
  .container{
     margin-left: 5px !important;
@@ -163,4 +167,10 @@ table{
      transform: scale(0.41) translate(-74.5%,-75%);
     
  }
+ .barcont{
+     display: block;
+ }
 }
+
+
+

@@ -17,10 +17,14 @@
     <title>Forum fifanampiana</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md bg-success shadow-lg fixed-top px-2 pt-0">
-        <div><img src="src/img/logoET.png" class="logo" alt=""></div>
+  <nav class="navbar navbar-expand-md bg-success shadow-lg fixed-top px-2 ">
+    <div><img src="src/img/logoET.png" class="logo" alt=""></div>
+    <ul id="navss" class="mt-3">
         <li>
-          <a href="index.html" class="nav-link nav-under" id="navc">Calendrier</a>
+            <a href="index.html" class="nav-link nav-under" id="pers">Home </a>
+          </li>
+        <li>
+          <a href="calendar.html" class="nav-link nav-under" id="navc">Calendrier</a>
         </li>
         <li>
           <a href="perspectives.html" class="nav-link nav-under" id="pers">Perspectives climatiques</a>
@@ -28,20 +32,20 @@
         <li>
           <a href="forum.html" class="nav-link nav-under" id="forum">Forum</a>
         </li>
-         <ul>
-          <li class="nav-item dropdown pt-2">
-              <a class="nav-link nav-under" href="#" id="navbardrop" data-toggle="dropdown">
-                <i class="fas fa-flag"></i>  <span id="fiteny"> Language </span> <i class="fas fa-caret-down"></i>
-              </a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" onclick="changeLanguage('fr')">Français</a>
-                <a class="dropdown-item" onclick="changeLanguage('mlg')">Malagasy</a>
-                <a class="dropdown-item" onclick="changeLanguage('en')">English</a>
-              </div>
-            </li>
-         </ul>
-       
-      </nav>
+    
+      <li class="nav-item dropdown">
+        <a class="nav-link nav-under" href="#" id="navbardrop" data-toggle="dropdown">
+          <i class="fas fa-flag"></i>  <span id="fiteny"> Language </span> <i class="fas fa-caret-down"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" onclick="changeLanguage('fr')">Français</a>
+          <a class="dropdown-item" onclick="changeLanguage('mlg')">Malagasy</a>
+          <a class="dropdown-item" onclick="changeLanguage('en')">English</a>
+        </div>
+      </li>
+    </ul>
+   
+  </nav>
     <div class="container mt-5">
         <div class="row mt-3">
             <div class="col-md-7">
@@ -99,7 +103,8 @@
         navc : "Calendar",
         forum: "Forum",
         fiteny : 'Language',
-        vaovao : "NewsFeed"
+        vaovao : "NewsFeed",
+        homs :"Home"
       },
       fr: {
         calendrier: "Calendrier culturel",
@@ -107,14 +112,16 @@
         navc: 'Calendrier',
         forum : 'Discussion',
         fiteny : 'Language',
-        vaovao:  "Actualités"
+        vaovao:  "Actualités",
+        homs : "Acceuil",
       },
       mlg: {
         calendrier: "Tetiandro fambolena",
         pers : "Vinavina Toetrandro",
         navc : "Tetiandro",
         forum: "Tafatafa",
-        fiteny : "Fiteny"
+        fiteny : "Fiteny",
+        homs: "Tongasoa"
   
       }
     };
@@ -134,6 +141,8 @@
           language.mlg.forum;
           document.getElementById('fiteny').textContent =
           language.mlg.fiteny;
+          document.getElementById('homs').textContent =
+          language.mlg.homs;
 
   
       }
@@ -148,6 +157,8 @@
           language.en.forum;
           document.getElementById('fiteny').textContent =
           language.en.fiteny;
+          document.getElementById('homs').textContent =
+        language.en.homs;
 
       }
       else if (window.location.hash == "#fr"){
@@ -160,6 +171,8 @@
           language.fr.forum;
           document.getElementById('fiteny').textContent =
           language.fr.fiteny
+          document.getElementById('homs').textContent =
+        language.en.homs;
       }
     }
   </script>
