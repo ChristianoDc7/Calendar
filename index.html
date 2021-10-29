@@ -24,7 +24,7 @@
         <div><img src="src/img/logoET.png" class="logo" alt=""></div>
         <ul id="navss" class="mt-3">
             <li>
-                <a href="index.html" class="nav-link nav-under" id="pers">Home </a>
+                <a href="index.html" class="nav-link nav-under" id="homs">Home </a>
               </li>
             <li>
               <a href="calendar.html" class="nav-link nav-under" id="navc">Calendrier</a>
@@ -347,5 +347,94 @@
 
     });
 </script>
+<script>
+    // Create a function to change
+    // the hash value of the page
+    function changeLanguage(lang) {
+      location.hash = lang;
+      location.reload();
+    }
+  
+    // Define the language reload anchors
+    var language = {
+      en: {
+        calendrier: "Agricultural Calendar",
+        pers : "Weather Perspective",
+        navc : "Calendar",
+        forum: "Forum",
+        fiteny : 'Language',
+        vaovao : "NewsFeed",
+        homs :"Home"
+      },
+      fr: {
+        calendrier: "Calendrier culturel",
+        pers : "Perspective climatique",
+        navc: 'Calendrier',
+        forum : 'Discussion',
+        fiteny : 'Language',
+        vaovao:  "Actualités",
+        homs : "Acceuil",
+      },
+      mlg: {
+        calendrier: "Tetiandro fambolena",
+        pers : "Vinavina Toetrandro",
+        navc : "Tetiandro",
+        forum: "Tafatafa",
+        fiteny : "Fiteny",
+        homs: "Tongasoa"
+  
+      }
+    };
+  
+    // Check if a hash value exists in the URL
+    if (window.location.hash) {
+  
+      // Set the content of the webpage 
+      // depending on the hash value
+      if (window.location.hash == "#mlg") {
+
+          document.getElementById('pers').textContent =
+          language.mlg.pers;
+          document.getElementById('navc').textContent =
+          language.mlg.navc;
+          document.getElementById('forum').textContent =
+          language.mlg.forum;
+          document.getElementById('fiteny').textContent =
+          language.mlg.fiteny;
+          document.getElementById('homs').textContent =
+          language.mlg.homs;
+
+  
+      }
+      else if (window.location.hash == "#en") {
+ 
+        document.getElementById('pers').textContent =
+          language.en.pers;
+
+          document.getElementById('navc').textContent =
+          language.en.navc;
+          document.getElementById('forum').textContent =
+          language.en.forum;
+          document.getElementById('fiteny').textContent =
+          language.en.fiteny;
+          document.getElementById('homs').textContent =
+        language.en.homs;
+
+      }
+      else if (window.location.hash == "#fr"){
+
+        document.getElementById('pers').textContent =
+          language.fr.pers;
+          document.getElementById('navc').textContent =
+          language.fr.navc;
+          document.getElementById('forum').textContent =
+          language.fr.forum;
+          document.getElementById('fiteny').textContent =
+          language.fr.fiteny
+          document.getElementById('homs').textContent =
+        language.en.homs;
+      }
+    }
+  </script>
 </body>
 </html>
